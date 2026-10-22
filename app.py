@@ -126,32 +126,25 @@ if not HAS_SRC_MODULE:
             if len(tensor.shape) == 1:
                 tensor = self.tf.expand_dims(tensor, axis=0)
 
-            # 1. Try model.infer_tf (Perch native TF interface)
+            # 1. Primary endpoint for TFHub Perch model: infer_tf
             if hasattr(self.model, 'infer_tf'):
-                try:
-                    return self.model.infer_tf(tensor)
-                except Exception:
-                    pass
+                return self.model.infer_tf(tensor)
 
-            # 2. Try direct call if model object is callable
-            if callable(self.model):
-                try:
-                    return self.model(tensor)
-                except Exception:
-                    pass
-
-            # 3. Try serving_default signature with named keyword arguments
+            # 2. Check serving_default signature
             if hasattr(self.model, 'signatures') and 'serving_default' in self.model.signatures:
                 sig = self.model.signatures['serving_default']
                 try:
-                    input_keys = list(sig.structured_input_signature[1].keys()) if hasattr(sig, 'structured_input_signature') and sig.structured_input_signature else []
-                    if input_keys:
-                        return sig(**{input_keys[0]: tensor})
                     return sig(inputs=tensor)
                 except Exception:
-                    pass
+                    try:
+                        return sig(tensor)
+                    except Exception:
+                        pass
 
-            raise TypeError(f"Unable to invoke TFHub Perch model of type {type(self.model)}")
+            # 3. KerasLayer fallback
+            import tensorflow_hub as hub
+            keras_layer = hub.KerasLayer(self.model_url)
+            return keras_layer(tensor)
 
     def extract_embeddings(audio_paths: list, embedder, output_path: Path, sample_rate: int = 48000, window_seconds: float = 3.0, hop_seconds: float = 1.5):
         output_path.mkdir(exist_ok=True, parents=True)
@@ -177,12 +170,11 @@ if not HAS_SRC_MODULE:
                 inp = np.expand_dims(seg.astype(np.float32), axis=0)
                 outputs = embedder(inp)
 
-                # Extract embedding array safely from dict or tensor output
                 if isinstance(outputs, dict):
-                    if 'embedding' in outputs:
-                        val = outputs['embedding']
-                    elif 'output_1' in outputs:
+                    if 'output_1' in outputs:
                         val = outputs['output_1']
+                    elif 'embedding' in outputs:
+                        val = outputs['embedding']
                     elif 'output_0' in outputs:
                         val = outputs['output_0']
                     else:
@@ -197,7 +189,7 @@ if not HAS_SRC_MODULE:
 
                 emb_flat = np.squeeze(emb_np)
                 if emb_flat.ndim > 1:
-                    emb_flat = emb_flat.mean(axis=0) if emb_flat.shape[0] > 1 else emb_flat[0]
+                    emb_flat = emb_flat.mean(axis=0)
 
                 embeddings.append(emb_flat)
 
