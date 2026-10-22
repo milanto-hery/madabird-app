@@ -111,12 +111,27 @@ except Exception:
 if not HAS_SRC_MODULE:
     class PerchTFHubEmbedder:
         def __init__(self, model_url: str):
+            import tensorflow as tf
             import tensorflow_hub as hub
+            self.tf = tf
             self.model_url = model_url
             self.model = hub.load(model_url)
 
         def __call__(self, audio_tensor):
-            return self.model(audio_tensor)
+            if not isinstance(audio_tensor, self.tf.Tensor):
+                tensor = self.tf.convert_to_tensor(audio_tensor, dtype=self.tf.float32)
+            else:
+                tensor = audio_tensor
+
+            try:
+                return self.model(tensor)
+            except TypeError:
+                if hasattr(self.model, 'signatures') and 'serving_default' in self.model.signatures:
+                    return self.model.signatures['serving_default'](tensor)
+                elif hasattr(self.model, 'infer_tf'):
+                    return self.model.infer_tf(tensor)
+                else:
+                    raise
 
     def extract_embeddings(audio_paths: list, embedder, output_path: Path, sample_rate: int = 48000, window_seconds: float = 3.0, hop_seconds: float = 1.5):
         output_path.mkdir(exist_ok=True, parents=True)
@@ -141,10 +156,15 @@ if not HAS_SRC_MODULE:
             for seg in segments:
                 inp = np.expand_dims(seg.astype(np.float32), axis=0)
                 outputs = embedder(inp)
+
                 if isinstance(outputs, dict):
-                    emb = list(outputs.values())[0].numpy()
-                else:
+                    first_val = list(outputs.values())[0]
+                    emb = first_val.numpy() if hasattr(first_val, 'numpy') else np.array(first_val)
+                elif hasattr(outputs, 'numpy'):
                     emb = outputs.numpy()
+                else:
+                    emb = np.array(outputs)
+
                 embeddings.append(emb.squeeze(0))
 
             embeddings_arr = np.array(embeddings, dtype=np.float32)
@@ -338,10 +358,8 @@ with tab_id:
         st.markdown("---")
         if st.button("🚀 Analyze Soundscape & Predict Species", type="primary", use_container_width=True):
             with st.spinner("⚡ Extracting Perch Embeddings & Executing ONNX Classifier..."):
-                # 1. Load Species Registry
                 species_lookup = load_robust_species_lookup(SPECIES_MAP_PATH)
 
-                # 2. Extract Perch Embeddings (exact Colab pipeline: 48 kHz, 3.0s window, 1.5s hop)
                 embedder = get_perch_embedder()
                 temp_emb_dir = Path(tempfile.gettempdir()) / "test_embeddings"
                 temp_emb_dir.mkdir(exist_ok=True, parents=True)
@@ -359,11 +377,9 @@ with tab_id:
                 audio_embeddings = np.load(emb_file)
                 num_windows = len(audio_embeddings)
 
-                # 3. Encode Spatial Priors
                 spatial_vector = encode_spatial_priors(latitude=lat_val, longitude=lon_val, day_of_year=day_val)
                 spatial_batch = np.tile(spatial_vector, (num_windows, 1)).astype(np.float32)
 
-                # 4. ONNX Session Execution
                 session = load_onnx_session(MODEL_ONNX_PATH)
                 if session is not None:
                     input_names = [inp.name for inp in session.get_inputs()]
@@ -377,11 +393,9 @@ with tab_id:
                     st.error("❌ model.onnx file not found in exports/ directory!")
                     st.stop()
 
-                # 5. Aggregate probabilities across sliding windows
                 avg_probs = np.mean(probs, axis=0)
                 max_probs = np.max(probs, axis=0)
 
-                # 6. Construct structured detection results
                 all_records = []
                 for class_idx, avg_p in enumerate(avg_probs):
                     sp_info = species_lookup.get(class_idx, {})
@@ -405,7 +419,6 @@ with tab_id:
                 df_all = pd.DataFrame(all_records).sort_values(by="mean_confidence", ascending=False).reset_index(drop=True)
                 df_filtered = df_all[df_all["mean_confidence"] >= confidence_threshold].reset_index(drop=True)
 
-                # Display filtered results or top candidates strictly from model
                 df_display = df_filtered if not df_filtered.empty else df_all.head(10)
 
                 st.session_state.inference_results = {
@@ -514,7 +527,6 @@ with tab_indices:
         y_audio = st.session_state.y_audio
         sr_audio = st.session_state.sr_audio
 
-        # Audio Player placed ABOVE Spectrogram / Waveform
         st.markdown("#### 🎧 Audio Player")
         st.audio(st.session_state.y_audio, sample_rate=sr_audio)
 
