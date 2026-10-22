@@ -107,7 +107,7 @@ try:
 except Exception:
     HAS_SRC_MODULE = False
 
-# Standalone fallback implementations matching Colab pipeline
+# Standalone robust fallback implementations matching Colab pipeline
 if not HAS_SRC_MODULE:
     class PerchTFHubEmbedder:
         def __init__(self, model_url: str):
@@ -123,15 +123,35 @@ if not HAS_SRC_MODULE:
             else:
                 tensor = audio_tensor
 
-            try:
-                return self.model(tensor)
-            except TypeError:
-                if hasattr(self.model, 'signatures') and 'serving_default' in self.model.signatures:
-                    return self.model.signatures['serving_default'](tensor)
-                elif hasattr(self.model, 'infer_tf'):
+            if len(tensor.shape) == 1:
+                tensor = self.tf.expand_dims(tensor, axis=0)
+
+            # 1. Try model.infer_tf (Perch native TF interface)
+            if hasattr(self.model, 'infer_tf'):
+                try:
                     return self.model.infer_tf(tensor)
-                else:
-                    raise
+                except Exception:
+                    pass
+
+            # 2. Try direct call if model object is callable
+            if callable(self.model):
+                try:
+                    return self.model(tensor)
+                except Exception:
+                    pass
+
+            # 3. Try serving_default signature with named keyword arguments
+            if hasattr(self.model, 'signatures') and 'serving_default' in self.model.signatures:
+                sig = self.model.signatures['serving_default']
+                try:
+                    input_keys = list(sig.structured_input_signature[1].keys()) if hasattr(sig, 'structured_input_signature') and sig.structured_input_signature else []
+                    if input_keys:
+                        return sig(**{input_keys[0]: tensor})
+                    return sig(inputs=tensor)
+                except Exception:
+                    pass
+
+            raise TypeError(f"Unable to invoke TFHub Perch model of type {type(self.model)}")
 
     def extract_embeddings(audio_paths: list, embedder, output_path: Path, sample_rate: int = 48000, window_seconds: float = 3.0, hop_seconds: float = 1.5):
         output_path.mkdir(exist_ok=True, parents=True)
@@ -157,15 +177,29 @@ if not HAS_SRC_MODULE:
                 inp = np.expand_dims(seg.astype(np.float32), axis=0)
                 outputs = embedder(inp)
 
+                # Extract embedding array safely from dict or tensor output
                 if isinstance(outputs, dict):
-                    first_val = list(outputs.values())[0]
-                    emb = first_val.numpy() if hasattr(first_val, 'numpy') else np.array(first_val)
-                elif hasattr(outputs, 'numpy'):
-                    emb = outputs.numpy()
+                    if 'embedding' in outputs:
+                        val = outputs['embedding']
+                    elif 'output_1' in outputs:
+                        val = outputs['output_1']
+                    elif 'output_0' in outputs:
+                        val = outputs['output_0']
+                    else:
+                        val = list(outputs.values())[0]
                 else:
-                    emb = np.array(outputs)
+                    val = outputs
 
-                embeddings.append(emb.squeeze(0))
+                if hasattr(val, 'numpy'):
+                    emb_np = val.numpy()
+                else:
+                    emb_np = np.array(val)
+
+                emb_flat = np.squeeze(emb_np)
+                if emb_flat.ndim > 1:
+                    emb_flat = emb_flat.mean(axis=0) if emb_flat.shape[0] > 1 else emb_flat[0]
+
+                embeddings.append(emb_flat)
 
             embeddings_arr = np.array(embeddings, dtype=np.float32)
             out_file = output_path / f"{audio_p.stem}.npy"
@@ -322,7 +356,7 @@ if "inference_results" not in st.session_state: st.session_state.inference_resul
 # --- TAB 1: AUDIO INFERENCE & SPECIES ID ---
 with tab_id:
     st.subheader("1. Upload Acoustic Recording")
-    col_up1, col_up2 = st.columns([2, 1])
+    col_up1, col_up2 = st.columns(2)
 
     with col_up1:
         uploaded_file = st.file_uploader(
@@ -574,7 +608,7 @@ with tab_map:
     map_lat = lat_val if lat_val is not None else -18.9100
     map_lon = lon_val if lon_val is not None else 47.5200
 
-    col_map1, col_map2 = st.columns([2, 1])
+    col_map1, col_map2 = st.columns(2)
 
     with col_map1:
         map_df = pd.DataFrame({"lat": [map_lat], "lon": [map_lon], "name": [selected_zone]})
