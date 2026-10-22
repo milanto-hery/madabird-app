@@ -1,0 +1,3054 @@
+{
+  "species": [
+    {
+      "scientific_name": "Accipiter francesii",
+      "common_name": "Frances's sparrowhawk",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 0
+    },
+    {
+      "scientific_name": "Accipiter henstii",
+      "common_name": "Henst's goshawk",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 1
+    },
+    {
+      "scientific_name": "Accipiter madagascariensis",
+      "common_name": "Madagascar sparrowhawk",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 2
+    },
+    {
+      "scientific_name": "Aviceda madagascariensis",
+      "common_name": "Madagascar cuckoo-hawk",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 3
+    },
+    {
+      "scientific_name": "Buteo brachypterus",
+      "common_name": "Madagascar buzzard",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 4
+    },
+    {
+      "scientific_name": "Circus aeruginosus",
+      "common_name": "Eurasian marsh-harrier",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 5
+    },
+    {
+      "scientific_name": "Circus macrosceles",
+      "common_name": "Malagasy harrier",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 6
+    },
+    {
+      "scientific_name": "Circus macrourus",
+      "common_name": "Pallid harrier",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 7
+    },
+    {
+      "scientific_name": "Elanus caeruleus",
+      "common_name": "Black-winged kite",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 8
+    },
+    {
+      "scientific_name": "Eutriorchis astur",
+      "common_name": "Madagascar serpent-eagle",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 9
+    },
+    {
+      "scientific_name": "Haliaeetus vociferoides",
+      "common_name": "Madagascar fish-eagle",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 10
+    },
+    {
+      "scientific_name": "Lophaetus occipitalis",
+      "common_name": "Long-crested eagle",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 11
+    },
+    {
+      "scientific_name": "Macheiramphus alcinus",
+      "common_name": "Bat hawk",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 12
+    },
+    {
+      "scientific_name": "Milvus migrans",
+      "common_name": "Black kite",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 13
+    },
+    {
+      "scientific_name": "Polyboroides radiatus",
+      "common_name": "Madagascar harrier-hawk",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 14
+    },
+    {
+      "scientific_name": "Polyboroides typus",
+      "common_name": "African harrier-hawk",
+      "malagasy_name": null,
+      "family": "Accipitridae",
+      "order_group": "Hawks, eagles, and kites",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 15
+    },
+    {
+      "scientific_name": "Acrocephalus newtoni",
+      "common_name": "Madagascar swamp warbler",
+      "malagasy_name": null,
+      "family": "Acrocephalidae",
+      "order_group": "Reed warblers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 16
+    },
+    {
+      "scientific_name": "Nesillas lantzii",
+      "common_name": "Subdesert brush-warbler",
+      "malagasy_name": null,
+      "family": "Acrocephalidae",
+      "order_group": "Reed warblers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 17
+    },
+    {
+      "scientific_name": "Nesillas typica",
+      "common_name": "Malagasy brush-warbler",
+      "malagasy_name": null,
+      "family": "Acrocephalidae",
+      "order_group": "Reed warblers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 18
+    },
+    {
+      "scientific_name": "Eremopterix hova",
+      "common_name": "Madagascar lark",
+      "malagasy_name": null,
+      "family": "Alaudidae",
+      "order_group": "Larks",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 19
+    },
+    {
+      "scientific_name": "Corythornis madagascariensis",
+      "common_name": "Madagascar pygmy kingfisher",
+      "malagasy_name": null,
+      "family": "Alcedinidae",
+      "order_group": "Kingfishers",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": true,
+      "species_id": 20
+    },
+    {
+      "scientific_name": "Corythornis vintsioides",
+      "common_name": "Malagasy kingfisher",
+      "malagasy_name": null,
+      "family": "Alcedinidae",
+      "order_group": "Kingfishers",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 21
+    },
+    {
+      "scientific_name": "Anas bernieri",
+      "common_name": "Bernier's teal",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Rare resident",
+      "endemic_to_madagascar": true,
+      "species_id": 22
+    },
+    {
+      "scientific_name": "Anas erythrorhyncha",
+      "common_name": "Red-billed duck",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 23
+    },
+    {
+      "scientific_name": "Anas melleri",
+      "common_name": "Meller's duck",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": true,
+      "species_id": 24
+    },
+    {
+      "scientific_name": "Anas platyrhynchos",
+      "common_name": "Mallard",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Introduced species",
+      "endemic_to_madagascar": false,
+      "species_id": 25
+    },
+    {
+      "scientific_name": "Aythya innotata",
+      "common_name": "Madagascar pochard",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Recently rediscovered",
+      "endemic_to_madagascar": true,
+      "species_id": 26
+    },
+    {
+      "scientific_name": "Dendrocygna bicolor",
+      "common_name": "Fulvous whistling-duck",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": false,
+      "species_id": 27
+    },
+    {
+      "scientific_name": "Dendrocygna viduata",
+      "common_name": "White-faced whistling-duck",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 28
+    },
+    {
+      "scientific_name": "Nettapus auritus",
+      "common_name": "African pygmy-goose",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 29
+    },
+    {
+      "scientific_name": "Sarkidiornis melanotos",
+      "common_name": "Knob-billed duck",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Locally common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 30
+    },
+    {
+      "scientific_name": "Spatula hottentota",
+      "common_name": "Blue-billed teal",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Locally common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 31
+    },
+    {
+      "scientific_name": "Thalassornis leuconotus",
+      "common_name": "White-backed duck",
+      "malagasy_name": null,
+      "family": "Anatidae",
+      "order_group": "Ducks, geese, and waterfowl",
+      "occurrence_status": "Rare resident",
+      "endemic_to_madagascar": false,
+      "species_id": 32
+    },
+    {
+      "scientific_name": "Apus affinis",
+      "common_name": "Little swift",
+      "malagasy_name": null,
+      "family": "Apodidae",
+      "order_group": "Swifts",
+      "occurrence_status": "Recent colonist",
+      "endemic_to_madagascar": false,
+      "species_id": 33
+    },
+    {
+      "scientific_name": "Apus balstoni",
+      "common_name": "Malagasy swift",
+      "malagasy_name": null,
+      "family": "Apodidae",
+      "order_group": "Swifts",
+      "occurrence_status": "Widespread resident",
+      "endemic_to_madagascar": false,
+      "species_id": 34
+    },
+    {
+      "scientific_name": "Apus barbatus",
+      "common_name": "African swift",
+      "malagasy_name": null,
+      "family": "Apodidae",
+      "order_group": "Swifts",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 35
+    },
+    {
+      "scientific_name": "Apus melba",
+      "common_name": "Alpine swift",
+      "malagasy_name": null,
+      "family": "Apodidae",
+      "order_group": "Swifts",
+      "occurrence_status": "Widespread resident",
+      "endemic_to_madagascar": false,
+      "species_id": 36
+    },
+    {
+      "scientific_name": "Cypsiurus gracilis",
+      "common_name": "Malagasy palm-swift",
+      "malagasy_name": null,
+      "family": "Apodidae",
+      "order_group": "Swifts",
+      "occurrence_status": "Widespread resident",
+      "endemic_to_madagascar": false,
+      "species_id": 37
+    },
+    {
+      "scientific_name": "Zoonavena grandidieri",
+      "common_name": "Madagascar spinetail",
+      "malagasy_name": null,
+      "family": "Apodidae",
+      "order_group": "Swifts",
+      "occurrence_status": "Widespread resident",
+      "endemic_to_madagascar": false,
+      "species_id": 38
+    },
+    {
+      "scientific_name": "Ardea alba",
+      "common_name": "Great egret",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 39
+    },
+    {
+      "scientific_name": "Ardea cinerea",
+      "common_name": "Gray heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Fairly common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 40
+    },
+    {
+      "scientific_name": "Ardea humbloti",
+      "common_name": "Humblot's heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": false,
+      "species_id": 41
+    },
+    {
+      "scientific_name": "Ardea melanocephala",
+      "common_name": "Black-headed heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 42
+    },
+    {
+      "scientific_name": "Ardea purpurea",
+      "common_name": "Purple heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Fairly common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 43
+    },
+    {
+      "scientific_name": "Ardeola idae",
+      "common_name": "Malagasy pond-heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Visiting breeder",
+      "endemic_to_madagascar": false,
+      "species_id": 44
+    },
+    {
+      "scientific_name": "Ardeola ralloides",
+      "common_name": "Squacco heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 45
+    },
+    {
+      "scientific_name": "Bubulcus ibis",
+      "common_name": "Cattle egret",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 46
+    },
+    {
+      "scientific_name": "Butorides striata",
+      "common_name": "Striated heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Fairly common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 47
+    },
+    {
+      "scientific_name": "Egretta ardesiaca",
+      "common_name": "Black heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Fairly common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 48
+    },
+    {
+      "scientific_name": "Egretta garzetta",
+      "common_name": "Little egret",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 49
+    },
+    {
+      "scientific_name": "Egretta gularis",
+      "common_name": "Western reef-heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 50
+    },
+    {
+      "scientific_name": "Ixobrychus minutus",
+      "common_name": "Little bittern",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Scarce breeder",
+      "endemic_to_madagascar": false,
+      "species_id": 51
+    },
+    {
+      "scientific_name": "Nycticorax nycticorax",
+      "common_name": "Black-crowned night-heron",
+      "malagasy_name": null,
+      "family": "Ardeidae",
+      "order_group": "Herons, egrets, and bitterns",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": false,
+      "species_id": 52
+    },
+    {
+      "scientific_name": "Bernieria madagascariensis",
+      "common_name": "Long-billed bernieria",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 53
+    },
+    {
+      "scientific_name": "Crossleyia xanthophrys",
+      "common_name": "Yellow-browed oxylabes",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 54
+    },
+    {
+      "scientific_name": "Cryptosylvicola randriansoloi",
+      "common_name": "Cryptic warbler",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 55
+    },
+    {
+      "scientific_name": "Hartertula flavoviridis",
+      "common_name": "Wedge-tailed jery",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 56
+    },
+    {
+      "scientific_name": "Oxylabes madagascariensis",
+      "common_name": "White-throated oxylabes",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 57
+    },
+    {
+      "scientific_name": "Randia pseudozosterops",
+      "common_name": "Rand's warbler",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 58
+    },
+    {
+      "scientific_name": "Thamnornis chloropetoides",
+      "common_name": "Thamnornis",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 59
+    },
+    {
+      "scientific_name": "Xanthomixis apperti",
+      "common_name": "Appert's tetraka",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 60
+    },
+    {
+      "scientific_name": "Xanthomixis cinereiceps",
+      "common_name": "Gray-crowned tetraka",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 61
+    },
+    {
+      "scientific_name": "Xanthomixis tenebrosus",
+      "common_name": "Dusky tetraka",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 62
+    },
+    {
+      "scientific_name": "Xanthomixis zosterops",
+      "common_name": "Spectacled tetraka",
+      "malagasy_name": null,
+      "family": "Bernieridae",
+      "order_group": "Malagasy warblers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 63
+    },
+    {
+      "scientific_name": "Atelornis crossleyi",
+      "common_name": "Rufous-headed ground-roller",
+      "malagasy_name": null,
+      "family": "Brachypteraciidae",
+      "order_group": "Ground-rollers",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": true,
+      "species_id": 64
+    },
+    {
+      "scientific_name": "Atelornis pittoides",
+      "common_name": "Pitta-like ground-roller",
+      "malagasy_name": null,
+      "family": "Brachypteraciidae",
+      "order_group": "Ground-rollers",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": true,
+      "species_id": 65
+    },
+    {
+      "scientific_name": "Brachypteracias leptosomus",
+      "common_name": "Short-legged ground-roller",
+      "malagasy_name": null,
+      "family": "Brachypteraciidae",
+      "order_group": "Ground-rollers",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": true,
+      "species_id": 66
+    },
+    {
+      "scientific_name": "Brachypteracias squamigera",
+      "common_name": "Scaly ground-roller",
+      "malagasy_name": null,
+      "family": "Brachypteraciidae",
+      "order_group": "Ground-rollers",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": true,
+      "species_id": 67
+    },
+    {
+      "scientific_name": "Uratelornis chimaera",
+      "common_name": "Long-tailed ground-roller",
+      "malagasy_name": null,
+      "family": "Brachypteraciidae",
+      "order_group": "Ground-rollers",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": true,
+      "species_id": 68
+    },
+    {
+      "scientific_name": "Ceblepyris cinereus",
+      "common_name": "Madagascar cuckooshrike",
+      "malagasy_name": null,
+      "family": "Campephagidae",
+      "order_group": "Cuckooshrikes",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 69
+    },
+    {
+      "scientific_name": "Caprimulgus madagascariensis",
+      "common_name": "Madagascar nightjar",
+      "malagasy_name": null,
+      "family": "Caprimulgidae",
+      "order_group": "Nightjars and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 70
+    },
+    {
+      "scientific_name": "Gactornis enarratus",
+      "common_name": "Collared nightjar",
+      "malagasy_name": null,
+      "family": "Caprimulgidae",
+      "order_group": "Nightjars and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 71
+    },
+    {
+      "scientific_name": "Charadrius dubius",
+      "common_name": "Little ringed plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 72
+    },
+    {
+      "scientific_name": "Charadrius hiaticula",
+      "common_name": "Common ringed plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 73
+    },
+    {
+      "scientific_name": "Charadrius leschenaultii",
+      "common_name": "Greater sand-plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 74
+    },
+    {
+      "scientific_name": "Charadrius marginatus",
+      "common_name": "White-fronted plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 75
+    },
+    {
+      "scientific_name": "Charadrius mongolus",
+      "common_name": "Lesser sand-plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 76
+    },
+    {
+      "scientific_name": "Charadrius pecuarius",
+      "common_name": "Kittlitz's plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 77
+    },
+    {
+      "scientific_name": "Charadrius thoracicus",
+      "common_name": "Madagascar plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 78
+    },
+    {
+      "scientific_name": "Charadrius tricollaris",
+      "common_name": "Three-banded plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 79
+    },
+    {
+      "scientific_name": "Charadrius veredus",
+      "common_name": "Oriental plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 80
+    },
+    {
+      "scientific_name": "Pluvialis fulva",
+      "common_name": "Pacific golden-plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 81
+    },
+    {
+      "scientific_name": "Pluvialis squatarola",
+      "common_name": "Black-bellied plover",
+      "malagasy_name": null,
+      "family": "Charadriidae",
+      "order_group": "Plovers and lapwings",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 82
+    },
+    {
+      "scientific_name": "Cisticola cherinus",
+      "common_name": "Madagascar cisticola",
+      "malagasy_name": null,
+      "family": "Cisticolidae",
+      "order_group": "Cisticolas and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 83
+    },
+    {
+      "scientific_name": "Neomixis striatigula",
+      "common_name": "Stripe-throated jery",
+      "malagasy_name": null,
+      "family": "Cisticolidae",
+      "order_group": "Cisticolas and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 84
+    },
+    {
+      "scientific_name": "Neomixis tenella",
+      "common_name": "Common jery",
+      "malagasy_name": null,
+      "family": "Cisticolidae",
+      "order_group": "Cisticolas and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 85
+    },
+    {
+      "scientific_name": "Neomixis viridis",
+      "common_name": "Green jery",
+      "malagasy_name": null,
+      "family": "Cisticolidae",
+      "order_group": "Cisticolas and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 86
+    },
+    {
+      "scientific_name": "Alectroenas madagascariensis",
+      "common_name": "Madagascar blue-pigeon",
+      "malagasy_name": null,
+      "family": "Columbidae",
+      "order_group": "Pigeons and doves",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 87
+    },
+    {
+      "scientific_name": "Columba livia",
+      "common_name": "Rock pigeon",
+      "malagasy_name": null,
+      "family": "Columbidae",
+      "order_group": "Pigeons and doves",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 88
+    },
+    {
+      "scientific_name": "Geopelia striata",
+      "common_name": "Zebra dove",
+      "malagasy_name": null,
+      "family": "Columbidae",
+      "order_group": "Pigeons and doves",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 89
+    },
+    {
+      "scientific_name": "Nesoenas picturatus",
+      "common_name": "Malagasy turtle-dove",
+      "malagasy_name": null,
+      "family": "Columbidae",
+      "order_group": "Pigeons and doves",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 90
+    },
+    {
+      "scientific_name": "Oena capensis",
+      "common_name": "Namaqua dove",
+      "malagasy_name": null,
+      "family": "Columbidae",
+      "order_group": "Pigeons and doves",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 91
+    },
+    {
+      "scientific_name": "Treron australis",
+      "common_name": "Madagascar green-pigeon",
+      "malagasy_name": null,
+      "family": "Columbidae",
+      "order_group": "Pigeons and doves",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 92
+    },
+    {
+      "scientific_name": "Eurystomus glaucurus",
+      "common_name": "Broad-billed roller",
+      "malagasy_name": null,
+      "family": "Coraciidae",
+      "order_group": "Rollers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 93
+    },
+    {
+      "scientific_name": "Microcarbo africanus",
+      "common_name": "Long-tailed cormorant",
+      "malagasy_name": null,
+      "family": "Cormorant",
+      "order_group": "Cormorants and shags",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": false,
+      "species_id": 94
+    },
+    {
+      "scientific_name": "Corvus albus",
+      "common_name": "Pied crow",
+      "malagasy_name": null,
+      "family": "Corvidae",
+      "order_group": "Crows, jays, and magpies",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 95
+    },
+    {
+      "scientific_name": "Corvus splendens",
+      "common_name": "House crow",
+      "malagasy_name": null,
+      "family": "Corvidae",
+      "order_group": "Crows, jays, and magpies",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 96
+    },
+    {
+      "scientific_name": "Centropus toulou",
+      "common_name": "Malagasy coucal",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 97
+    },
+    {
+      "scientific_name": "Coua caerulea",
+      "common_name": "Blue coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 98
+    },
+    {
+      "scientific_name": "Coua coquereli",
+      "common_name": "Coquerel's coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 99
+    },
+    {
+      "scientific_name": "Coua cristata",
+      "common_name": "Crested coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 100
+    },
+    {
+      "scientific_name": "Coua cursor",
+      "common_name": "Running coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 101
+    },
+    {
+      "scientific_name": "Coua gigas",
+      "common_name": "Giant coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 102
+    },
+    {
+      "scientific_name": "Coua reynaudii",
+      "common_name": "Red-fronted coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 103
+    },
+    {
+      "scientific_name": "Coua ruficeps",
+      "common_name": "Red-capped coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 104
+    },
+    {
+      "scientific_name": "Coua serriana",
+      "common_name": "Red-breasted coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 105
+    },
+    {
+      "scientific_name": "Coua verreauxi",
+      "common_name": "Verreaux's coua",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 106
+    },
+    {
+      "scientific_name": "Cuculus rochii",
+      "common_name": "Madagascar cuckoo",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 107
+    },
+    {
+      "scientific_name": "Pachycoccyx audeberti",
+      "common_name": "Thick-billed cuckoo",
+      "malagasy_name": null,
+      "family": "Cuculidae",
+      "order_group": "Cuckoos",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 108
+    },
+    {
+      "scientific_name": "Anhinga rufa",
+      "common_name": "African darter",
+      "malagasy_name": null,
+      "family": "Darter",
+      "order_group": "Anhingas",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": false,
+      "species_id": 109
+    },
+    {
+      "scientific_name": "Dicrurus forficatus",
+      "common_name": "Crested drongo",
+      "malagasy_name": null,
+      "family": "Dicruridae",
+      "order_group": "Drongos",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 110
+    },
+    {
+      "scientific_name": "Diomedea exulans",
+      "common_name": "Wandering albatross",
+      "malagasy_name": null,
+      "family": "Diomedeidae",
+      "order_group": "Albatrosses",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 111
+    },
+    {
+      "scientific_name": "Thalassarche chlororhynchos",
+      "common_name": "Yellow-nosed albatross",
+      "malagasy_name": null,
+      "family": "Diomedeidae",
+      "order_group": "Albatrosses",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 112
+    },
+    {
+      "scientific_name": "Thalassarche melanophrys",
+      "common_name": "Black-browed albatross",
+      "malagasy_name": null,
+      "family": "Diomedeidae",
+      "order_group": "Albatrosses",
+      "occurrence_status": "Rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 113
+    },
+    {
+      "scientific_name": "Thalassarche salvini",
+      "common_name": "Salvin's albatross",
+      "malagasy_name": null,
+      "family": "Diomedeidae",
+      "order_group": "Albatrosses",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 114
+    },
+    {
+      "scientific_name": "Dromas ardeola",
+      "common_name": "Crab-plover",
+      "malagasy_name": null,
+      "family": "Dromadidae",
+      "order_group": "Crab-plover",
+      "occurrence_status": "Common visitor",
+      "endemic_to_madagascar": false,
+      "species_id": 115
+    },
+    {
+      "scientific_name": "Estrilda astrild",
+      "common_name": "Common waxbill",
+      "malagasy_name": null,
+      "family": "Estrildidae",
+      "order_group": "Waxbills and allies",
+      "occurrence_status": "Introduced and local",
+      "endemic_to_madagascar": false,
+      "species_id": 116
+    },
+    {
+      "scientific_name": "Lepidopygia nana",
+      "common_name": "Madagascar mannikin",
+      "malagasy_name": null,
+      "family": "Estrildidae",
+      "order_group": "Waxbills and allies",
+      "occurrence_status": "Common in suitable habitat",
+      "endemic_to_madagascar": true,
+      "species_id": 117
+    },
+    {
+      "scientific_name": "Falco concolor",
+      "common_name": "Sooty falcon",
+      "malagasy_name": null,
+      "family": "Falconidae",
+      "order_group": "Falcons and caracaras",
+      "occurrence_status": "Winter visitor",
+      "endemic_to_madagascar": false,
+      "species_id": 118
+    },
+    {
+      "scientific_name": "Falco eleonorae",
+      "common_name": "Eleonora's falcon",
+      "malagasy_name": null,
+      "family": "Falconidae",
+      "order_group": "Falcons and caracaras",
+      "occurrence_status": "Winter visitor",
+      "endemic_to_madagascar": false,
+      "species_id": 119
+    },
+    {
+      "scientific_name": "Falco newtoni",
+      "common_name": "Malagasy kestrel",
+      "malagasy_name": null,
+      "family": "Falconidae",
+      "order_group": "Falcons and caracaras",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": false,
+      "species_id": 120
+    },
+    {
+      "scientific_name": "Falco peregrinus",
+      "common_name": "Peregrine falcon",
+      "malagasy_name": null,
+      "family": "Falconidae",
+      "order_group": "Falcons and caracaras",
+      "occurrence_status": "Scarce resident",
+      "endemic_to_madagascar": false,
+      "species_id": 121
+    },
+    {
+      "scientific_name": "Falco zoniventris",
+      "common_name": "Banded kestrel",
+      "malagasy_name": null,
+      "family": "Falconidae",
+      "order_group": "Falcons and caracaras",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": true,
+      "species_id": 122
+    },
+    {
+      "scientific_name": "Fregata ariel",
+      "common_name": "Lesser frigatebird",
+      "malagasy_name": null,
+      "family": "Frigatebird",
+      "order_group": "Frigatebirds",
+      "occurrence_status": "Casual visitor",
+      "endemic_to_madagascar": false,
+      "species_id": 123
+    },
+    {
+      "scientific_name": "Fregata minor",
+      "common_name": "Great frigatebird",
+      "malagasy_name": null,
+      "family": "Frigatebird",
+      "order_group": "Frigatebirds",
+      "occurrence_status": "Casual visitor",
+      "endemic_to_madagascar": false,
+      "species_id": 124
+    },
+    {
+      "scientific_name": "Glareola maldivarum",
+      "common_name": "Oriental pratincole",
+      "malagasy_name": null,
+      "family": "Glareolidae",
+      "order_group": "Pratincoles and coursers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 125
+    },
+    {
+      "scientific_name": "Glareola ocularis",
+      "common_name": "Madagascar pratincole",
+      "malagasy_name": null,
+      "family": "Glareolidae",
+      "order_group": "Pratincoles and coursers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 126
+    },
+    {
+      "scientific_name": "Delichon urbicum",
+      "common_name": "Common house-martin",
+      "malagasy_name": null,
+      "family": "Hirundinidae",
+      "order_group": "Swallows",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 127
+    },
+    {
+      "scientific_name": "Hirundo rustica",
+      "common_name": "Barn swallow",
+      "malagasy_name": null,
+      "family": "Hirundinidae",
+      "order_group": "Swallows",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 128
+    },
+    {
+      "scientific_name": "Phedina borbonica",
+      "common_name": "Mascarene martin",
+      "malagasy_name": null,
+      "family": "Hirundinidae",
+      "order_group": "Swallows",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 129
+    },
+    {
+      "scientific_name": "Riparia paludicola",
+      "common_name": "Plain martin",
+      "malagasy_name": null,
+      "family": "Hirundinidae",
+      "order_group": "Swallows",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 130
+    },
+    {
+      "scientific_name": "Riparia riparia",
+      "common_name": "Bank swallow",
+      "malagasy_name": null,
+      "family": "Hirundinidae",
+      "order_group": "Swallows",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 131
+    },
+    {
+      "scientific_name": "Actophilornis albinucha",
+      "common_name": "Madagascar jacana",
+      "malagasy_name": null,
+      "family": "Jacanidae",
+      "order_group": "Jacanas",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 132
+    },
+    {
+      "scientific_name": "Anous stolidus",
+      "common_name": "Brown noddy",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 133
+    },
+    {
+      "scientific_name": "Anous tenuirostris",
+      "common_name": "Lesser noddy",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 134
+    },
+    {
+      "scientific_name": "Chlidonias hybrida",
+      "common_name": "Whiskered tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 135
+    },
+    {
+      "scientific_name": "Chlidonias leucopterus",
+      "common_name": "White-winged tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 136
+    },
+    {
+      "scientific_name": "Chlidonias niger",
+      "common_name": "Black tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 137
+    },
+    {
+      "scientific_name": "Chroicocephalus cirrocephalus",
+      "common_name": "Gray-hooded gull",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 138
+    },
+    {
+      "scientific_name": "Gelochelidon nilotica",
+      "common_name": "Gull-billed tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 139
+    },
+    {
+      "scientific_name": "Hydroprogne caspia",
+      "common_name": "Caspian tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 140
+    },
+    {
+      "scientific_name": "Ichthyaetus hemprichii",
+      "common_name": "Sooty gull",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 141
+    },
+    {
+      "scientific_name": "Larus dominicanus",
+      "common_name": "Kelp gull",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 142
+    },
+    {
+      "scientific_name": "Onychoprion anaethetus",
+      "common_name": "Bridled tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 143
+    },
+    {
+      "scientific_name": "Onychoprion fuscatus",
+      "common_name": "Sooty tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 144
+    },
+    {
+      "scientific_name": "Sterna dougallii",
+      "common_name": "Roseate tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 145
+    },
+    {
+      "scientific_name": "Sterna hirundo",
+      "common_name": "Common tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 146
+    },
+    {
+      "scientific_name": "Sterna sumatrana",
+      "common_name": "Black-naped tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 147
+    },
+    {
+      "scientific_name": "Sternula albifrons",
+      "common_name": "Little tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 148
+    },
+    {
+      "scientific_name": "Sternula saundersi",
+      "common_name": "Saunders's tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 149
+    },
+    {
+      "scientific_name": "Thalasseus bengalensis",
+      "common_name": "Lesser crested tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 150
+    },
+    {
+      "scientific_name": "Thalasseus bergii",
+      "common_name": "Great crested tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 151
+    },
+    {
+      "scientific_name": "Thalasseus sandvicensis",
+      "common_name": "Sandwich tern",
+      "malagasy_name": null,
+      "family": "Laridae",
+      "order_group": "Gulls, terns, and skimmers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 152
+    },
+    {
+      "scientific_name": "Leptosomus discolor",
+      "common_name": "Cuckoo-roller",
+      "malagasy_name": null,
+      "family": "Leptosomidae",
+      "order_group": "Cuckoo-roller",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 153
+    },
+    {
+      "scientific_name": "Bradypterus brunneus",
+      "common_name": "Brown emutail",
+      "malagasy_name": null,
+      "family": "Locustellidae",
+      "order_group": "Grassbirds and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 154
+    },
+    {
+      "scientific_name": "Bradypterus seebohmi",
+      "common_name": "Gray emutail",
+      "malagasy_name": null,
+      "family": "Locustellidae",
+      "order_group": "Grassbirds and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 155
+    },
+    {
+      "scientific_name": "Merops apiaster",
+      "common_name": "European bee-eater",
+      "malagasy_name": null,
+      "family": "Meropidae",
+      "order_group": "Bee-eaters",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 156
+    },
+    {
+      "scientific_name": "Merops superciliosus",
+      "common_name": "Madagascar bee-eater",
+      "malagasy_name": null,
+      "family": "Meropidae",
+      "order_group": "Bee-eaters",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 157
+    },
+    {
+      "scientific_name": "Mesitornis unicolor",
+      "common_name": "Brown mesite",
+      "malagasy_name": null,
+      "family": "Mesitornithidae",
+      "order_group": "Mesites",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": true,
+      "species_id": 158
+    },
+    {
+      "scientific_name": "Mesitornis variegata",
+      "common_name": "White-breasted mesite",
+      "malagasy_name": null,
+      "family": "Mesitornithidae",
+      "order_group": "Mesites",
+      "occurrence_status": "Locally common resident",
+      "endemic_to_madagascar": true,
+      "species_id": 159
+    },
+    {
+      "scientific_name": "Monias benschi",
+      "common_name": "Subdesert mesite",
+      "malagasy_name": null,
+      "family": "Mesitornithidae",
+      "order_group": "Mesites",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": true,
+      "species_id": 160
+    },
+    {
+      "scientific_name": "Terpsiphone mutata",
+      "common_name": "Malagasy paradise-flycatcher",
+      "malagasy_name": null,
+      "family": "Monarchidae",
+      "order_group": "Monarch flycatchers",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 161
+    },
+    {
+      "scientific_name": "Motacilla alba",
+      "common_name": "White wagtail",
+      "malagasy_name": null,
+      "family": "Motacillidae",
+      "order_group": "Wagtails and pipits",
+      "occurrence_status": "Accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 162
+    },
+    {
+      "scientific_name": "Motacilla flaviventris",
+      "common_name": "Madagascar wagtail",
+      "malagasy_name": null,
+      "family": "Motacillidae",
+      "order_group": "Wagtails and pipits",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 163
+    },
+    {
+      "scientific_name": "Copsychus albospecularis",
+      "common_name": "Madagascar magpie-robin",
+      "malagasy_name": null,
+      "family": "Muscicapidae",
+      "order_group": "Old World flycatchers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 164
+    },
+    {
+      "scientific_name": "Monticola erythronotus",
+      "common_name": "Amber Mountain rock thrush",
+      "malagasy_name": null,
+      "family": "Muscicapidae",
+      "order_group": "Old World flycatchers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 165
+    },
+    {
+      "scientific_name": "Monticola imerinus",
+      "common_name": "Littoral rock-thrush",
+      "malagasy_name": null,
+      "family": "Muscicapidae",
+      "order_group": "Old World flycatchers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 166
+    },
+    {
+      "scientific_name": "Monticola sharpei",
+      "common_name": "Forest rock-thrush",
+      "malagasy_name": null,
+      "family": "Muscicapidae",
+      "order_group": "Old World flycatchers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 167
+    },
+    {
+      "scientific_name": "Oenanthe oenanthe",
+      "common_name": "Northern wheatear",
+      "malagasy_name": null,
+      "family": "Muscicapidae",
+      "order_group": "Old World flycatchers",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 168
+    },
+    {
+      "scientific_name": "Saxicola torquatus",
+      "common_name": "African stonechat",
+      "malagasy_name": null,
+      "family": "Muscicapidae",
+      "order_group": "Old World flycatchers",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 169
+    },
+    {
+      "scientific_name": "Cinnyris notatus",
+      "common_name": "Malagasy green sunbird",
+      "malagasy_name": null,
+      "family": "Nectariniidae",
+      "order_group": "Sunbirds and spiderhunters",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 170
+    },
+    {
+      "scientific_name": "Cinnyris sovimanga",
+      "common_name": "Souimanga sunbird",
+      "malagasy_name": null,
+      "family": "Nectariniidae",
+      "order_group": "Sunbirds and spiderhunters",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 171
+    },
+    {
+      "scientific_name": "Numida meleagris",
+      "common_name": "Helmeted guineafowl",
+      "malagasy_name": null,
+      "family": "Numididae",
+      "order_group": "Guineafowl",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 172
+    },
+    {
+      "scientific_name": "Fregetta grallaria",
+      "common_name": "White-bellied storm-petrel",
+      "malagasy_name": null,
+      "family": "Oceanitidae",
+      "order_group": "Southern storm-petrels",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 173
+    },
+    {
+      "scientific_name": "Fregetta tropica",
+      "common_name": "Black-bellied storm-petrel",
+      "malagasy_name": null,
+      "family": "Oceanitidae",
+      "order_group": "Southern storm-petrels",
+      "occurrence_status": "Regular",
+      "endemic_to_madagascar": false,
+      "species_id": 174
+    },
+    {
+      "scientific_name": "Oceanites oceanicus",
+      "common_name": "Wilson's storm-petrel",
+      "malagasy_name": null,
+      "family": "Oceanitidae",
+      "order_group": "Southern storm-petrels",
+      "occurrence_status": "Regular migrant",
+      "endemic_to_madagascar": false,
+      "species_id": 175
+    },
+    {
+      "scientific_name": "Pelagodroma marina",
+      "common_name": "White-faced storm-petrel",
+      "malagasy_name": null,
+      "family": "Oceanitidae",
+      "order_group": "Southern storm-petrels",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 176
+    },
+    {
+      "scientific_name": "Oriolus oriolus",
+      "common_name": "Eurasian golden oriole",
+      "malagasy_name": null,
+      "family": "Oriolidae",
+      "order_group": "Old World orioles",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 177
+    },
+    {
+      "scientific_name": "Pandion haliaetus",
+      "common_name": "Osprey",
+      "malagasy_name": null,
+      "family": "Pandionidae",
+      "order_group": "Osprey",
+      "occurrence_status": "Rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 178
+    },
+    {
+      "scientific_name": "Passer domesticus",
+      "common_name": "House sparrow",
+      "malagasy_name": null,
+      "family": "Passeridae",
+      "order_group": "Old World sparrows",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 179
+    },
+    {
+      "scientific_name": "Pelecanus rufescens",
+      "common_name": "Pink-backed pelican",
+      "malagasy_name": null,
+      "family": "Pelican",
+      "order_group": "Pelicans",
+      "occurrence_status": "Rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 180
+    },
+    {
+      "scientific_name": "Coturnix coturnix",
+      "common_name": "Common quail",
+      "malagasy_name": null,
+      "family": "Phasianidae",
+      "order_group": "Pheasants, grouse, and allies",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": false,
+      "species_id": 181
+    },
+    {
+      "scientific_name": "Coturnix delegorguei",
+      "common_name": "Harlequin quail",
+      "malagasy_name": null,
+      "family": "Phasianidae",
+      "order_group": "Pheasants, grouse, and allies",
+      "occurrence_status": "Uncommon visitor",
+      "endemic_to_madagascar": false,
+      "species_id": 182
+    },
+    {
+      "scientific_name": "Margaroperdix madagarensis",
+      "common_name": "Madagascar partridge",
+      "malagasy_name": null,
+      "family": "Phasianidae",
+      "order_group": "Pheasants, grouse, and allies",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": true,
+      "species_id": 183
+    },
+    {
+      "scientific_name": "Neodrepanis coruscans",
+      "common_name": "Common sunbird-asity",
+      "malagasy_name": null,
+      "family": "Philepittidae",
+      "order_group": "Asities",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 184
+    },
+    {
+      "scientific_name": "Neodrepanis hypoxanthus",
+      "common_name": "Yellow-bellied sunbird-asity",
+      "malagasy_name": null,
+      "family": "Philepittidae",
+      "order_group": "Asities",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 185
+    },
+    {
+      "scientific_name": "Philepitta castanea",
+      "common_name": "Velvet asity",
+      "malagasy_name": null,
+      "family": "Philepittidae",
+      "order_group": "Asities",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 186
+    },
+    {
+      "scientific_name": "Philepitta schlegeli",
+      "common_name": "Schlegel's asity",
+      "malagasy_name": null,
+      "family": "Philepittidae",
+      "order_group": "Asities",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 187
+    },
+    {
+      "scientific_name": "Phoenicopterus minor",
+      "common_name": "Lesser flamingo",
+      "malagasy_name": null,
+      "family": "Phoenicopteridae",
+      "order_group": "Flamingos",
+      "occurrence_status": "Erratic migrant",
+      "endemic_to_madagascar": false,
+      "species_id": 188
+    },
+    {
+      "scientific_name": "Phoenicopterus roseus",
+      "common_name": "Greater flamingo",
+      "malagasy_name": null,
+      "family": "Phoenicopteridae",
+      "order_group": "Flamingos",
+      "occurrence_status": "Regular, rare breeder",
+      "endemic_to_madagascar": false,
+      "species_id": 189
+    },
+    {
+      "scientific_name": "Foudia madagascariensis",
+      "common_name": "Red fody",
+      "malagasy_name": null,
+      "family": "Ploceidae",
+      "order_group": "Weavers and allies",
+      "occurrence_status": "Very common",
+      "endemic_to_madagascar": true,
+      "species_id": 190
+    },
+    {
+      "scientific_name": "Foudia omissa",
+      "common_name": "Forest fody",
+      "malagasy_name": null,
+      "family": "Ploceidae",
+      "order_group": "Weavers and allies",
+      "occurrence_status": "Fairly common",
+      "endemic_to_madagascar": true,
+      "species_id": 191
+    },
+    {
+      "scientific_name": "Ploceus nelicourvi",
+      "common_name": "Nelicourvi weaver",
+      "malagasy_name": null,
+      "family": "Ploceidae",
+      "order_group": "Weavers and allies",
+      "occurrence_status": "Fairly common in suitable habitat",
+      "endemic_to_madagascar": true,
+      "species_id": 192
+    },
+    {
+      "scientific_name": "Ploceus sakalava",
+      "common_name": "Sakalava weaver",
+      "malagasy_name": null,
+      "family": "Ploceidae",
+      "order_group": "Weavers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 193
+    },
+    {
+      "scientific_name": "Tachybaptus pelzelnii",
+      "common_name": "Madagascar grebe",
+      "malagasy_name": null,
+      "family": "Podicipedidae",
+      "order_group": "Grebes",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": true,
+      "species_id": 194
+    },
+    {
+      "scientific_name": "Tachybaptus ruficollis",
+      "common_name": "Little grebe",
+      "malagasy_name": null,
+      "family": "Podicipedidae",
+      "order_group": "Grebes",
+      "occurrence_status": "Locally common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 195
+    },
+    {
+      "scientific_name": "Ardenna carneipes",
+      "common_name": "Flesh-footed shearwater",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 196
+    },
+    {
+      "scientific_name": "Ardenna pacifica",
+      "common_name": "Wedge-tailed shearwater",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Uncommon offshore",
+      "endemic_to_madagascar": false,
+      "species_id": 197
+    },
+    {
+      "scientific_name": "Bulweria bulwerii",
+      "common_name": "Bulwer's petrel",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 198
+    },
+    {
+      "scientific_name": "Bulweria fallax",
+      "common_name": "Jouanin's petrel",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 199
+    },
+    {
+      "scientific_name": "Calonectris diomedea",
+      "common_name": "Cory's shearwater",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 200
+    },
+    {
+      "scientific_name": "Daption capense",
+      "common_name": "Cape petrel",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Offshore migrant, Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 201
+    },
+    {
+      "scientific_name": "Macronectes giganteus",
+      "common_name": "Southern giant-petrel",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Regular offshore",
+      "endemic_to_madagascar": false,
+      "species_id": 202
+    },
+    {
+      "scientific_name": "Pachyptila salvini",
+      "common_name": "Salvin's prion",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 203
+    },
+    {
+      "scientific_name": "Pachyptila vittata",
+      "common_name": "Broad-billed prion",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 204
+    },
+    {
+      "scientific_name": "Pterodroma baraui",
+      "common_name": "Barau's petrel",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 205
+    },
+    {
+      "scientific_name": "Pterodroma macroptera",
+      "common_name": "Great-winged petrel",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Uncommon",
+      "endemic_to_madagascar": false,
+      "species_id": 206
+    },
+    {
+      "scientific_name": "Pterodroma mollis",
+      "common_name": "Soft-plumaged petrel",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 207
+    },
+    {
+      "scientific_name": "Puffinus bailloni",
+      "common_name": "Tropical shearwater",
+      "malagasy_name": null,
+      "family": "Procellariidae",
+      "order_group": "Shearwaters and petrels",
+      "occurrence_status": "Uncommon offshore",
+      "endemic_to_madagascar": false,
+      "species_id": 208
+    },
+    {
+      "scientific_name": "Agapornis canus",
+      "common_name": "Gray-headed lovebird",
+      "malagasy_name": null,
+      "family": "Psittaculidae",
+      "order_group": "Old World parrots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 209
+    },
+    {
+      "scientific_name": "Coracopsis nigra",
+      "common_name": "Lesser vasa parrot",
+      "malagasy_name": null,
+      "family": "Psittaculidae",
+      "order_group": "Old World parrots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 210
+    },
+    {
+      "scientific_name": "Coracopsis vasa",
+      "common_name": "Greater vasa parrot",
+      "malagasy_name": null,
+      "family": "Psittaculidae",
+      "order_group": "Old World parrots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 211
+    },
+    {
+      "scientific_name": "Pterocles personatus",
+      "common_name": "Madagascar sandgrouse",
+      "malagasy_name": null,
+      "family": "Pteroclidae",
+      "order_group": "Sandgrouse",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 212
+    },
+    {
+      "scientific_name": "Hypsipetes madagascariensis",
+      "common_name": "Malagasy bulbul",
+      "malagasy_name": null,
+      "family": "Pycnonotidae",
+      "order_group": "Bulbuls",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 213
+    },
+    {
+      "scientific_name": "Crex crex",
+      "common_name": "Corn crake",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 214
+    },
+    {
+      "scientific_name": "Dryolimnas cuvieri",
+      "common_name": "White-throated rail",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 215
+    },
+    {
+      "scientific_name": "Fulica cristata",
+      "common_name": "Red-knobbed coot",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 216
+    },
+    {
+      "scientific_name": "Gallinula chloropus",
+      "common_name": "Eurasian moorhen",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 217
+    },
+    {
+      "scientific_name": "Porphyrio alleni",
+      "common_name": "Allen's gallinule",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 218
+    },
+    {
+      "scientific_name": "Porphyrio madagascariensis",
+      "common_name": "African swamphen",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 219
+    },
+    {
+      "scientific_name": "Porzana porzana",
+      "common_name": "Spotted crake",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 220
+    },
+    {
+      "scientific_name": "Rallus madagascariensis",
+      "common_name": "Madagascar rail",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 221
+    },
+    {
+      "scientific_name": "Zapornia olivieri",
+      "common_name": "Sakalava rail",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 222
+    },
+    {
+      "scientific_name": "Zapornia parva",
+      "common_name": "Little crake",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 223
+    },
+    {
+      "scientific_name": "Zapornia pusilla",
+      "common_name": "Baillon's crake",
+      "malagasy_name": null,
+      "family": "Rallidae",
+      "order_group": "Rails, gallinules, and coots",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 224
+    },
+    {
+      "scientific_name": "Himantopus himantopus",
+      "common_name": "Black-winged stilt",
+      "malagasy_name": null,
+      "family": "Recurvirostridae",
+      "order_group": "Stilts and avocets",
+      "occurrence_status": "Fairly common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 225
+    },
+    {
+      "scientific_name": "Recurvirostra avosetta",
+      "common_name": "Pied avocet",
+      "malagasy_name": null,
+      "family": "Recurvirostridae",
+      "order_group": "Stilts and avocets",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 226
+    },
+    {
+      "scientific_name": "Rostratula benghalensis",
+      "common_name": "Greater painted-snipe",
+      "malagasy_name": null,
+      "family": "Rostratulidae",
+      "order_group": "Painted-snipes",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 227
+    },
+    {
+      "scientific_name": "Mentocrex beankaensis",
+      "common_name": "Tsingy wood-rail",
+      "malagasy_name": null,
+      "family": "Sarothruridae",
+      "order_group": "Flufftails",
+      "occurrence_status": "Range-restricted resident",
+      "endemic_to_madagascar": true,
+      "species_id": 228
+    },
+    {
+      "scientific_name": "Mentocrex kioloides",
+      "common_name": "Madagascar wood-rail",
+      "malagasy_name": null,
+      "family": "Sarothruridae",
+      "order_group": "Flufftails",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 229
+    },
+    {
+      "scientific_name": "Sarothrura insularis",
+      "common_name": "Madagascar flufftail",
+      "malagasy_name": null,
+      "family": "Sarothruridae",
+      "order_group": "Flufftails",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 230
+    },
+    {
+      "scientific_name": "Sarothrura watersi",
+      "common_name": "Slender-billed flufftail",
+      "malagasy_name": null,
+      "family": "Sarothruridae",
+      "order_group": "Flufftails",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 231
+    },
+    {
+      "scientific_name": "Actitis hypoleucos",
+      "common_name": "Common sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 232
+    },
+    {
+      "scientific_name": "Arenaria interpres",
+      "common_name": "Ruddy turnstone",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 233
+    },
+    {
+      "scientific_name": "Calidris acuminata",
+      "common_name": "Sharp-tailed sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 234
+    },
+    {
+      "scientific_name": "Calidris alba",
+      "common_name": "Sanderling",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 235
+    },
+    {
+      "scientific_name": "Calidris ferruginea",
+      "common_name": "Curlew sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 236
+    },
+    {
+      "scientific_name": "Calidris melanotos",
+      "common_name": "Pectoral sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 237
+    },
+    {
+      "scientific_name": "Calidris minuta",
+      "common_name": "Little stint",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 238
+    },
+    {
+      "scientific_name": "Calidris pugnax",
+      "common_name": "Ruff",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 239
+    },
+    {
+      "scientific_name": "Calidris subruficollis",
+      "common_name": "Buff-breasted sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 240
+    },
+    {
+      "scientific_name": "Gallinago macrodactyla",
+      "common_name": "Madagascar snipe",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 241
+    },
+    {
+      "scientific_name": "Limosa lapponica",
+      "common_name": "Bar-tailed godwit",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 242
+    },
+    {
+      "scientific_name": "Limosa limosa",
+      "common_name": "Black-tailed godwit",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 243
+    },
+    {
+      "scientific_name": "Numenius arquata",
+      "common_name": "Eurasian curlew",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 244
+    },
+    {
+      "scientific_name": "Numenius phaeopus",
+      "common_name": "Whimbrel",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 245
+    },
+    {
+      "scientific_name": "Phalaropus lobatus",
+      "common_name": "Red-necked phalarope",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 246
+    },
+    {
+      "scientific_name": "Tringa glareola",
+      "common_name": "Wood sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 247
+    },
+    {
+      "scientific_name": "Tringa nebularia",
+      "common_name": "Common greenshank",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 248
+    },
+    {
+      "scientific_name": "Tringa ochropus",
+      "common_name": "Green sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 249
+    },
+    {
+      "scientific_name": "Tringa stagnatilis",
+      "common_name": "Marsh sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 250
+    },
+    {
+      "scientific_name": "Xenus cinereus",
+      "common_name": "Terek sandpiper",
+      "malagasy_name": null,
+      "family": "Scolopacidae",
+      "order_group": "Sandpipers and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 251
+    },
+    {
+      "scientific_name": "Scopus umbretta",
+      "common_name": "Hamerkop",
+      "malagasy_name": null,
+      "family": "Scopidae",
+      "order_group": "Hamerkop",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": false,
+      "species_id": 252
+    },
+    {
+      "scientific_name": "Stercorarius antarcticus",
+      "common_name": "Brown skua",
+      "malagasy_name": null,
+      "family": "Stercorariidae",
+      "order_group": "Skuas and jaegers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 253
+    },
+    {
+      "scientific_name": "Stercorarius longicaudus",
+      "common_name": "Long-tailed jaeger",
+      "malagasy_name": null,
+      "family": "Stercorariidae",
+      "order_group": "Skuas and jaegers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 254
+    },
+    {
+      "scientific_name": "Stercorarius maccormicki",
+      "common_name": "South polar skua",
+      "malagasy_name": null,
+      "family": "Stercorariidae",
+      "order_group": "Skuas and jaegers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 255
+    },
+    {
+      "scientific_name": "Sterocorarius pomarinus",
+      "common_name": "Pomarine jaeger",
+      "malagasy_name": null,
+      "family": "Stercorariidae",
+      "order_group": "Skuas and jaegers",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 256
+    },
+    {
+      "scientific_name": "Anastomus lamelligerus",
+      "common_name": "African openbill",
+      "malagasy_name": null,
+      "family": "Stork",
+      "order_group": "Storks",
+      "occurrence_status": "Resident",
+      "endemic_to_madagascar": false,
+      "species_id": 257
+    },
+    {
+      "scientific_name": "Mycteria ibis",
+      "common_name": "Yellow-billed stork",
+      "malagasy_name": null,
+      "family": "Stork",
+      "order_group": "Storks",
+      "occurrence_status": "Locally common",
+      "endemic_to_madagascar": false,
+      "species_id": 258
+    },
+    {
+      "scientific_name": "Asio capensis",
+      "common_name": "Marsh owl",
+      "malagasy_name": null,
+      "family": "Strigidae",
+      "order_group": "Owls",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 259
+    },
+    {
+      "scientific_name": "Asio madagascariensis",
+      "common_name": "Madagascar owl",
+      "malagasy_name": null,
+      "family": "Strigidae",
+      "order_group": "Owls",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 260
+    },
+    {
+      "scientific_name": "Athene superciliaris",
+      "common_name": "White-browed owl",
+      "malagasy_name": null,
+      "family": "Strigidae",
+      "order_group": "Owls",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 261
+    },
+    {
+      "scientific_name": "Otus rutilus",
+      "common_name": "Madagascar scops-owl",
+      "malagasy_name": null,
+      "family": "Strigidae",
+      "order_group": "Owls",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 262
+    },
+    {
+      "scientific_name": "Otus senegalensis",
+      "common_name": "African scops-owl",
+      "malagasy_name": null,
+      "family": "Strigidae",
+      "order_group": "Owls",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 263
+    },
+    {
+      "scientific_name": "Acridotheres tristis",
+      "common_name": "Common myna",
+      "malagasy_name": null,
+      "family": "Sturnidae",
+      "order_group": "Starlings",
+      "occurrence_status": "Introduced and spreading",
+      "endemic_to_madagascar": false,
+      "species_id": 264
+    },
+    {
+      "scientific_name": "Creatophora cinerea",
+      "common_name": "Wattled starling",
+      "malagasy_name": null,
+      "family": "Sturnidae",
+      "order_group": "Starlings",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 265
+    },
+    {
+      "scientific_name": "Hartlaubius auratus",
+      "common_name": "Madagascar starling",
+      "malagasy_name": null,
+      "family": "Sturnidae",
+      "order_group": "Starlings",
+      "occurrence_status": "Fairly common northwest, north and east",
+      "endemic_to_madagascar": true,
+      "species_id": 266
+    },
+    {
+      "scientific_name": "Sula dactylatra",
+      "common_name": "Masked booby",
+      "malagasy_name": null,
+      "family": "Sulidae",
+      "order_group": "Boobies and gannets",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 267
+    },
+    {
+      "scientific_name": "Sula leucogaster",
+      "common_name": "Brown booby",
+      "malagasy_name": null,
+      "family": "Sulidae",
+      "order_group": "Boobies and gannets",
+      "occurrence_status": "Visiting breeder",
+      "endemic_to_madagascar": false,
+      "species_id": 268
+    },
+    {
+      "scientific_name": "Sula sula",
+      "common_name": "Red-footed booby",
+      "malagasy_name": null,
+      "family": "Sulidae",
+      "order_group": "Boobies and gannets",
+      "occurrence_status": "Uncommon visitor",
+      "endemic_to_madagascar": false,
+      "species_id": 269
+    },
+    {
+      "scientific_name": "Lophotibis cristata",
+      "common_name": "Madagascar ibis",
+      "malagasy_name": null,
+      "family": "Threskiornithidae",
+      "order_group": "Ibises and spoonbills",
+      "occurrence_status": "Rare resident",
+      "endemic_to_madagascar": true,
+      "species_id": 270
+    },
+    {
+      "scientific_name": "Platalea alba",
+      "common_name": "African spoonbill",
+      "malagasy_name": null,
+      "family": "Threskiornithidae",
+      "order_group": "Ibises and spoonbills",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": false,
+      "species_id": 271
+    },
+    {
+      "scientific_name": "Plegadis falcinellus",
+      "common_name": "Glossy ibis",
+      "malagasy_name": null,
+      "family": "Threskiornithidae",
+      "order_group": "Ibises and spoonbills",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": false,
+      "species_id": 272
+    },
+    {
+      "scientific_name": "Threskiornis aethiopicus",
+      "common_name": "African sacred ibis",
+      "malagasy_name": null,
+      "family": "Threskiornithidae",
+      "order_group": "Ibises and spoonbills",
+      "occurrence_status": "Rare/accidental",
+      "endemic_to_madagascar": false,
+      "species_id": 273
+    },
+    {
+      "scientific_name": "Threskiornis bernieri",
+      "common_name": "Malagasy sacred ibis",
+      "malagasy_name": null,
+      "family": "Threskiornithidae",
+      "order_group": "Ibises and spoonbills",
+      "occurrence_status": "Rare resident",
+      "endemic_to_madagascar": false,
+      "species_id": 274
+    },
+    {
+      "scientific_name": "Phaethon aethereus",
+      "common_name": "Red-billed tropicbird",
+      "malagasy_name": null,
+      "family": "Tropicbird",
+      "order_group": "Tropicbirds",
+      "occurrence_status": "Very rare vagrant",
+      "endemic_to_madagascar": false,
+      "species_id": 275
+    },
+    {
+      "scientific_name": "Phaethon lepturus",
+      "common_name": "White-tailed tropicbird",
+      "malagasy_name": null,
+      "family": "Tropicbird",
+      "order_group": "Tropicbirds",
+      "occurrence_status": "Visiting breeder",
+      "endemic_to_madagascar": false,
+      "species_id": 276
+    },
+    {
+      "scientific_name": "Phaethon rubricauda",
+      "common_name": "Red-tailed tropicbird",
+      "malagasy_name": null,
+      "family": "Tropicbird",
+      "order_group": "Tropicbirds",
+      "occurrence_status": "Visiting breeder",
+      "endemic_to_madagascar": false,
+      "species_id": 277
+    },
+    {
+      "scientific_name": "Turnix nigricollis",
+      "common_name": "Madagascar buttonquail",
+      "malagasy_name": null,
+      "family": "Turnicidae",
+      "order_group": "Buttonquails",
+      "occurrence_status": "Common resident",
+      "endemic_to_madagascar": true,
+      "species_id": 278
+    },
+    {
+      "scientific_name": "Tyto alba",
+      "common_name": "Western barn owl",
+      "malagasy_name": null,
+      "family": "Tytonidae",
+      "order_group": "Barn owls",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 279
+    },
+    {
+      "scientific_name": "Tyto soumagnei",
+      "common_name": "Red owl",
+      "malagasy_name": null,
+      "family": "Tytonidae",
+      "order_group": "Barn owls",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 280
+    },
+    {
+      "scientific_name": "Upupa epops",
+      "common_name": "Eurasian hoopoe",
+      "malagasy_name": null,
+      "family": "Upupidae",
+      "order_group": "Hoopoes",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 281
+    },
+    {
+      "scientific_name": "Upupa marginata",
+      "common_name": "Madagascar hoopoe",
+      "malagasy_name": null,
+      "family": "Upupidae",
+      "order_group": "Hoopoes",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 282
+    },
+    {
+      "scientific_name": "Artamella viridis",
+      "common_name": "White-headed vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 283
+    },
+    {
+      "scientific_name": "Calicalicus madagascariensis",
+      "common_name": "Red-tailed vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Fairly common resident",
+      "endemic_to_madagascar": true,
+      "species_id": 284
+    },
+    {
+      "scientific_name": "Calicalicus rufocarpalis",
+      "common_name": "Red-shouldered vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Uncommon resident",
+      "endemic_to_madagascar": true,
+      "species_id": 285
+    },
+    {
+      "scientific_name": "Cyanolanius madagascarinus",
+      "common_name": "Madagascar blue vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 286
+    },
+    {
+      "scientific_name": "Euryceros prevostii",
+      "common_name": "Helmet vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 287
+    },
+    {
+      "scientific_name": "Falculea palliata",
+      "common_name": "Sickle-billed vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 288
+    },
+    {
+      "scientific_name": "Hypositta corallirostris",
+      "common_name": "Nuthatch-vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 289
+    },
+    {
+      "scientific_name": "Leptopterus chabert",
+      "common_name": "Chabert vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 290
+    },
+    {
+      "scientific_name": "Mystacornis crossleyi",
+      "common_name": "Crossley's vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 291
+    },
+    {
+      "scientific_name": "Newtonia amphichroa",
+      "common_name": "Dark newtonia",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 292
+    },
+    {
+      "scientific_name": "Newtonia archboldi",
+      "common_name": "Archbold's newtonia",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 293
+    },
+    {
+      "scientific_name": "Newtonia brunneicauda",
+      "common_name": "Common newtonia",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 294
+    },
+    {
+      "scientific_name": "Newtonia fanovanae",
+      "common_name": "Red-tailed newtonia",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 295
+    },
+    {
+      "scientific_name": "Oriolia bernieri",
+      "common_name": "Bernier's vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 296
+    },
+    {
+      "scientific_name": "Pseudobias wardi",
+      "common_name": "Ward's flycatcher",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Range-restricted resident",
+      "endemic_to_madagascar": true,
+      "species_id": 297
+    },
+    {
+      "scientific_name": "Schetba rufa",
+      "common_name": "Rufous vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 298
+    },
+    {
+      "scientific_name": "Tylas eduardi",
+      "common_name": "Tylas vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 299
+    },
+    {
+      "scientific_name": "Vanga curvirostris",
+      "common_name": "Hook-billed vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 300
+    },
+    {
+      "scientific_name": "Xenopirostris damii",
+      "common_name": "Van Dam's vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 301
+    },
+    {
+      "scientific_name": "Xenopirostris polleni",
+      "common_name": "Pollen's vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 302
+    },
+    {
+      "scientific_name": "Xenopirostris xenopirostris",
+      "common_name": "Lafresnaye's vanga",
+      "malagasy_name": null,
+      "family": "Vangidae",
+      "order_group": "Vangas, helmetshrikes, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": true,
+      "species_id": 303
+    },
+    {
+      "scientific_name": "Zosterops maderaspatanus",
+      "common_name": "Malagasy white-eye",
+      "malagasy_name": null,
+      "family": "Zosteropidae",
+      "order_group": "White-eyes, yuhinas, and allies",
+      "occurrence_status": "Not specified by source",
+      "endemic_to_madagascar": false,
+      "species_id": 304
+    }
+  ]
+}
