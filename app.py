@@ -20,7 +20,7 @@ try:
 except ImportError:
     pass
 
-# Ensure root directory is in Python path for module imports
+# Ensure root directory is in Python path so `src.data` imports work seamlessly
 ROOT_DIR = Path(__file__).parent.resolve()
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
@@ -99,7 +99,7 @@ MODEL_ONNX_PATH = EXPORTS_DIR / "model.onnx"
 SPECIES_MAP_PATH = EXPORTS_DIR / "species_mapping.json"
 PERCH_MODEL_URL = "https://www.kaggle.com/models/google/bird-vocalization-classifier/TensorFlow2/bird-vocalization-classifier/4"
 
-# Attempt importing pipeline modules directly from src (matching Google Colab setup)
+# Attempt importing pipeline modules directly from src (exact Google Colab setup)
 try:
     from src.data.audio_preprocessor import PerchTFHubEmbedder, extract_embeddings
     from src.data.spatial_priors import encode_spatial_priors
@@ -126,40 +126,33 @@ if not HAS_SRC_MODULE:
             if len(tensor.shape) == 1:
                 tensor = self.tf.expand_dims(tensor, axis=0)
 
-            # 1. Primary endpoint for TFHub Perch model: infer_tf
             if hasattr(self.model, 'infer_tf'):
                 return self.model.infer_tf(tensor)
 
-            # 2. Check serving_default signature
             if hasattr(self.model, 'signatures') and 'serving_default' in self.model.signatures:
                 sig = self.model.signatures['serving_default']
                 try:
                     return sig(inputs=tensor)
                 except Exception:
-                    try:
-                        return sig(tensor)
-                    except Exception:
-                        pass
+                    pass
 
-            # 3. KerasLayer fallback
             import tensorflow_hub as hub
             keras_layer = hub.KerasLayer(self.model_url)
             return keras_layer(tensor)
 
-    def extract_embeddings(audio_paths: list, embedder, output_path: Path, sample_rate: int = 32000, window_seconds: float = 5.0, hop_seconds: float = 2.5):
-        """Extract Google Perch v4 embeddings (strictly 160,000 samples = 5s @ 32kHz)."""
-        PERCH_REQUIRED_SAMPLES = 160000  # Google Perch exact input spec
+    def extract_embeddings(audio_paths: list, embedder, output_path: Path, sample_rate: int = 48000, window_seconds: float = 3.0, hop_seconds: float = 1.5):
         output_path.mkdir(exist_ok=True, parents=True)
         for audio_p in audio_paths:
             audio_p = Path(audio_p)
-            y, sr = librosa.load(str(audio_p), sr=32000, mono=True)
-            win_samples = int(5.0 * 32000)  # 160000
-            hop_samples = int(2.5 * 32000)  # 80000
+            y, sr = librosa.load(str(audio_p), sr=sample_rate, mono=True)
+            win_samples = int(window_seconds * sample_rate)
+            hop_samples = int(hop_seconds * sample_rate)
 
             num_samples = len(y)
             segments = []
             if num_samples < win_samples:
-                segments.append(y)
+                padded = np.pad(y, (0, win_samples - num_samples), mode='constant')
+                segments.append(padded)
             else:
                 start = 0
                 while start + win_samples <= num_samples:
@@ -168,32 +161,15 @@ if not HAS_SRC_MODULE:
 
             embeddings = []
             for seg in segments:
-                # Ensure exact 160,000 samples required by Google Perch input spec
-                if len(seg) < PERCH_REQUIRED_SAMPLES:
-                    seg_padded = np.pad(seg, (0, PERCH_REQUIRED_SAMPLES - len(seg)), mode='constant')
-                else:
-                    seg_padded = seg[:PERCH_REQUIRED_SAMPLES]
-
-                inp = np.expand_dims(seg_padded.astype(np.float32), axis=0)  # Shape: (1, 160000)
+                inp = np.expand_dims(seg.astype(np.float32), axis=0)
                 outputs = embedder(inp)
 
                 if isinstance(outputs, dict):
-                    if 'output_1' in outputs:
-                        val = outputs['output_1']
-                    elif 'embedding' in outputs:
-                        val = outputs['embedding']
-                    elif 'output_0' in outputs:
-                        val = outputs['output_0']
-                    else:
-                        val = list(outputs.values())[0]
+                    val = outputs.get('output_1', outputs.get('embedding', list(outputs.values())))
                 else:
                     val = outputs
 
-                if hasattr(val, 'numpy'):
-                    emb_np = val.numpy()
-                else:
-                    emb_np = np.array(val)
-
+                emb_np = val.numpy() if hasattr(val, 'numpy') else np.array(val)
                 emb_flat = np.squeeze(emb_np)
                 if emb_flat.ndim > 1:
                     emb_flat = emb_flat.mean(axis=0)
@@ -219,7 +195,7 @@ if not HAS_SRC_MODULE:
 
 
 def load_robust_species_lookup(map_path: Path) -> dict:
-    """Robust JSON species lookup builder."""
+    """Mamaky ny species_mapping.json na inona na inona rafitra nitahirizana azy (Exact Colab logic)."""
     if not map_path.exists():
         return {}
     with open(map_path, "r", encoding="utf-8") as f:
@@ -228,7 +204,10 @@ def load_robust_species_lookup(map_path: Path) -> dict:
     lookup = {}
     if isinstance(raw_data, list):
         for idx, item in enumerate(raw_data):
-            lookup[idx] = item if isinstance(item, dict) else {"scientific_name": str(item)}
+            if isinstance(item, dict):
+                lookup[idx] = item
+            else:
+                lookup[idx] = {"scientific_name": str(item)}
     elif isinstance(raw_data, dict):
         items = raw_data.get("species", raw_data)
         if isinstance(items, list):
@@ -364,7 +343,7 @@ with tab_id:
         )
 
     with col_up2:
-        st.info("💡 **Field Note:** The model automatically segments audio into 5s sliding windows (32 kHz / 160,000 samples) and extracts Perch embeddings for ONNX classification.")
+        st.info("💡 **Field Note:** The model automatically segments audio into 3s sliding windows (48 kHz) and extracts Perch embeddings for ONNX classification.")
 
     if uploaded_file is not None:
         with tempfile.NamedTemporaryFile(delete=False, suffix=Path(uploaded_file.name).suffix) as tmp:
@@ -372,7 +351,7 @@ with tab_id:
             tmp_audio_path = Path(tmp.name)
 
         # Dynamic Audio Loading & Value Extraction
-        y, sr = librosa.load(str(tmp_audio_path), sr=32000, mono=True)
+        y, sr = librosa.load(str(tmp_audio_path), sr=48000, mono=True)
         st.session_state.y_audio = y
         st.session_state.sr_audio = sr
         st.session_state.uploaded_filename = uploaded_file.name
@@ -385,14 +364,16 @@ with tab_id:
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Duration", f"{duration_sec:.1f} s")
         c2.metric("Sample Rate", f"{sr:,} Hz")
-        c3.metric("Evaluated Windows", f"{max(1, int(np.ceil(duration_sec / 2.5))):,}")
+        c3.metric("Evaluated Windows", f"{max(1, int(np.ceil(duration_sec / 1.5))):,}")
         c4.metric("Regional Zone", env_type)
 
         st.markdown("---")
         if st.button("🚀 Analyze Soundscape & Predict Species", type="primary", use_container_width=True):
             with st.spinner("⚡ Extracting Perch Embeddings & Executing ONNX Classifier..."):
+                # a. Species Lookup
                 species_lookup = load_robust_species_lookup(SPECIES_MAP_PATH)
 
+                # b. Extract Embeddings (Exact Colab pipeline execution)
                 embedder = get_perch_embedder()
                 temp_emb_dir = Path(tempfile.gettempdir()) / "test_embeddings"
                 temp_emb_dir.mkdir(exist_ok=True, parents=True)
@@ -401,18 +382,20 @@ with tab_id:
                     audio_paths=[tmp_audio_path],
                     embedder=embedder,
                     output_path=temp_emb_dir,
-                    sample_rate=32000,
-                    window_seconds=5.0,
-                    hop_seconds=2.5
+                    sample_rate=48_000,
+                    window_seconds=3.0,
+                    hop_seconds=1.5
                 )
 
                 emb_file = temp_emb_dir / f"{tmp_audio_path.stem}.npy"
                 audio_embeddings = np.load(emb_file)
                 num_windows = len(audio_embeddings)
 
+                # c. Spatial Priors
                 spatial_vector = encode_spatial_priors(latitude=lat_val, longitude=lon_val, day_of_year=day_val)
                 spatial_batch = np.tile(spatial_vector, (num_windows, 1)).astype(np.float32)
 
+                # d. ONNX Session
                 session = load_onnx_session(MODEL_ONNX_PATH)
                 if session is not None:
                     input_names = [inp.name for inp in session.get_inputs()]
@@ -421,6 +404,8 @@ with tab_id:
                         input_names[1]: spatial_batch
                     }
                     logits = session.run(None, inputs)[0]
+                    
+                    # e. Probabilities
                     probs = 1.0 / (1.0 + np.exp(-logits))
                 else:
                     st.error("❌ model.onnx file not found in exports/ directory!")
@@ -431,7 +416,7 @@ with tab_id:
 
                 all_records = []
                 for class_idx, avg_p in enumerate(avg_probs):
-                    sp_info = species_lookup.get(class_idx, {})
+                    sp_info = species_lookup.get(int(class_idx), {})
                     sci_name = sp_info.get("scientific_name", f"Species_{class_idx}")
                     com_name = sp_info.get("common_name", sp_info.get("english_name", "Malagasy Avifauna"))
                     malagasy_name = sp_info.get("malagasy_name", "Vorona")
@@ -531,7 +516,7 @@ with tab_id:
         top_names = df_res.head(8)["common_name"].tolist()
 
         timeline_data = probs_matrix[:, top_class_ids].T
-        time_stamps = [f"{i*2.5:.1f}s" for i in range(res["num_windows"])]
+        time_stamps = [f"{i*1.5:.1f}s" for i in range(res["num_windows"])]
 
         fig_heat = px.imshow(
             timeline_data,
