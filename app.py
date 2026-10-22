@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import math
 import tempfile
 from pathlib import Path
 import numpy as np
@@ -9,9 +10,13 @@ import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 import plotly.express as px
-import plotly.graph_objects as go
 import onnxruntime as ort
 import streamlit as st
+
+# Ensure root directory is in Python path for module imports
+ROOT_DIR = Path(__file__).parent.resolve()
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
 # ==============================================================================
 # 1. PAGE CONFIGURATION & CUSTOM CSS THEME
@@ -23,7 +28,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Professional Field Ecologist CSS Styling
+# Professional Field Ecologist Theme Styling
 st.markdown("""
 <style>
     .main {
@@ -80,39 +85,106 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==============================================================================
-# 2. HELPER FUNCTIONS & MODEL INFERENCE PIPELINE
+# 2. PATHS & PIPELINE IMPORTS / FALLBACKS
 # ==============================================================================
-EXPORTS_DIR = Path("exports")
+EXPORTS_DIR = ROOT_DIR / "exports"
 MODEL_ONNX_PATH = EXPORTS_DIR / "model.onnx"
 SPECIES_MAP_PATH = EXPORTS_DIR / "species_mapping.json"
+PERCH_MODEL_URL = "https://www.kaggle.com/models/google/bird-vocalization-classifier/TensorFlow2/bird-vocalization-classifier/4"
 
-@st.cache_data
-def load_species_registry(map_path: Path) -> dict:
-    """Robust parser for species mapping JSON."""
+# Attempt importing pipeline modules directly from src (matching Google Colab setup)
+try:
+    from src.data.audio_preprocessor import PerchTFHubEmbedder, extract_embeddings
+    from src.data.spatial_priors import encode_spatial_priors
+    HAS_SRC_MODULE = True
+except Exception:
+    HAS_SRC_MODULE = False
+
+# Standalone fallback implementations if src module path is absent
+if not HAS_SRC_MODULE:
+    class PerchTFHubEmbedder:
+        def __init__(self, model_url: str):
+            import tensorflow_hub as hub
+            self.model_url = model_url
+            self.model = hub.load(model_url)
+
+        def __call__(self, audio_tensor):
+            return self.model(audio_tensor)
+
+    def extract_embeddings(audio_paths: list, embedder, output_path: Path, sample_rate: int = 48000, window_seconds: float = 3.0, hop_seconds: float = 1.5):
+        output_path.mkdir(exist_ok=True, parents=True)
+        for audio_p in audio_paths:
+            audio_p = Path(audio_p)
+            y, sr = librosa.load(str(audio_p), sr=sample_rate, mono=True)
+            win_samples = int(window_seconds * sample_rate)
+            hop_samples = int(hop_seconds * sample_rate)
+
+            num_samples = len(y)
+            segments = []
+            if num_samples < win_samples:
+                padded = np.pad(y, (0, win_samples - num_samples), mode='constant')
+                segments.append(padded)
+            else:
+                start = 0
+                while start + win_samples <= num_samples:
+                    segments.append(y[start:start + win_samples])
+                    start += hop_samples
+
+            embeddings = []
+            for seg in segments:
+                inp = np.expand_dims(seg.astype(np.float32), axis=0)
+                outputs = embedder(inp)
+                if isinstance(outputs, dict):
+                    emb = list(outputs.values())[0].numpy()
+                else:
+                    emb = outputs.numpy()
+                embeddings.append(emb.squeeze(0))
+
+            embeddings_arr = np.array(embeddings, dtype=np.float32)
+            out_file = output_path / f"{audio_p.stem}.npy"
+            np.save(out_file, embeddings_arr)
+
+    def encode_spatial_priors(latitude=None, longitude=None, day_of_year=None) -> np.ndarray:
+        lat_val = -19.0 if latitude is None else float(latitude)
+        lon_val = 47.0 if longitude is None else float(longitude)
+        day_val = 183 if day_of_year is None else int(day_of_year)
+
+        lat_norm = lat_val / 90.0
+        lon_norm = lon_val / 180.0
+        rad = 2.0 * np.pi * day_val / 365.25
+        sin_day = math.sin(rad)
+        cos_day = math.cos(rad)
+
+        return np.array([lat_norm, lon_norm, sin_day, cos_day], dtype=np.float32)
+
+
+def load_robust_species_lookup(map_path: Path) -> dict:
+    """Mamaky ny species_mapping.json na inona na inona rafitra nitahirizana azy."""
     if not map_path.exists():
         return {}
     with open(map_path, "r", encoding="utf-8") as f:
-        raw = json.load(f)
+        raw_data = json.load(f)
 
     lookup = {}
-    if isinstance(raw, list):
-        for idx, item in enumerate(raw):
+    if isinstance(raw_data, list):
+        for idx, item in enumerate(raw_data):
             lookup[idx] = item if isinstance(item, dict) else {"scientific_name": str(item)}
-    elif isinstance(raw, dict):
-        items = raw.get("species", raw)
+    elif isinstance(raw_data, dict):
+        items = raw_data.get("species", raw_data)
         if isinstance(items, list):
             for idx, item in enumerate(items):
                 lookup[idx] = item if isinstance(item, dict) else {"scientific_name": str(item)}
         elif isinstance(items, dict):
             for k, v in items.items():
-                if isinstance(v, int):
+                if isinstance(v, int):  # Reverse mapping: {"Foudia madagascariensis": 190}
                     lookup[v] = {"scientific_name": k}
-                elif str(k).isdigit():
-                    lookup[int(k)] = v if isinstance(v, dict) else {"scientific_name": str(v)}
                 elif isinstance(v, dict):
-                    idx = int(v.get("index", v.get("class_id", 0)))
+                    idx = int(v.get("index", v.get("class_id", k if str(k).isdigit() else 0)))
                     lookup[idx] = v
+                elif str(k).isdigit():  # Normal mapping: {"190": {"scientific_name": "..."}}
+                    lookup[int(k)] = v if isinstance(v, dict) else {"scientific_name": str(v)}
     return lookup
+
 
 @st.cache_resource
 def load_onnx_session(model_path: Path):
@@ -121,67 +193,12 @@ def load_onnx_session(model_path: Path):
         return None
     return ort.InferenceSession(str(model_path), providers=["CPUExecutionProvider"])
 
-def safe_encode_spatial_prior(lat=None, lon=None, day=None) -> np.ndarray:
-    """Encode latitude, longitude, and day-of-year into 4D spatial vector."""
-    lat_val = -19.0 if lat is None else float(lat)
-    lon_val = 47.0 if lon is None else float(lon)
-    day_val = 183 if day is None else int(day)
-
-    if not (-90.0 <= lat_val <= 90.0): lat_val = -19.0
-    if not (-180.0 <= lon_val <= 180.0): lon_val = 47.0
-
-    lat_norm = lat_val / 90.0
-    lon_norm = lon_val / 180.0
-    rad = 2.0 * np.pi * day_val / 365.25
-    sin_day = np.sin(rad)
-    cos_day = np.cos(rad)
-
-    return np.array([lat_norm, lon_norm, sin_day, cos_day], dtype=np.float32)
 
 @st.cache_resource
-def load_perch_embedder():
-    """Load TensorFlow Hub Google Perch Model."""
-    try:
-        import tensorflow_hub as hub
-        url = "https://www.kaggle.com/models/google/bird-vocalization-classifier/TensorFlow2/bird-vocalization-classifier/4"
-        return hub.load(url)
-    except Exception as e:
-        return None
+def get_perch_embedder():
+    """Load Perch TFHub embedder with caching."""
+    return PerchTFHubEmbedder(PERCH_MODEL_URL)
 
-def extract_real_embeddings(y: np.ndarray, sr: int = 32000) -> np.ndarray:
-    """Extract Perch 1280-dim feature vectors directly from audio waveform."""
-    embedder = load_perch_embedder()
-    
-    if sr != 32000:
-        y = librosa.resample(y, orig_sr=sr, target_sr=32000)
-        sr = 32000
-        
-    win_len = 5 * 32000 # 5-second windows for Perch backbone
-    hop_len = int(2.5 * 32000) # 2.5s overlap
-    
-    if len(y) < win_len:
-        y = np.pad(y, (0, win_len - len(y)))
-        
-    embeddings = []
-    if embedder is not None:
-        try:
-            for start in range(0, len(y) - win_len + 1, hop_len):
-                chunk = y[start:start + win_len].astype(np.float32)
-                chunk_tensor = np.expand_dims(chunk, axis=0)
-                outputs = embedder(chunk_tensor)
-                
-                if isinstance(outputs, dict):
-                    emb = outputs.get('output_1', list(outputs.values())[0]).numpy()
-                else:
-                    emb = outputs.numpy()
-                embeddings.append(emb.squeeze(0))
-            return np.array(embeddings, dtype=np.float32)
-        except Exception:
-            pass
-            
-    # Fallback spectro-temporal feature representation if TF-Hub is offline
-    num_windows = max(1, int(np.ceil((len(y) - win_len) / hop_len)) + 1)
-    return np.random.randn(num_windows, 1280).astype(np.float32)
 
 def compute_ecoacoustic_indices(y: np.ndarray, sr: int) -> dict:
     """Compute key ecological & bioacoustic soundscape indices."""
@@ -200,7 +217,7 @@ def compute_ecoacoustic_indices(y: np.ndarray, sr: int) -> dict:
     band_edges = np.linspace(0, min(10000, sr // 2), num_bands + 1)
     band_energies = [np.sum(stft[(freqs >= band_edges[i]) & (freqs < band_edges[i+1]), :]) for i in range(num_bands)]
     probs = np.array(band_energies) / (np.sum(band_energies) + 1e-10)
-    
+
     adi = float(-np.sum(probs * np.log(probs + 1e-10)))
     aei = float(np.sum((probs - 1/num_bands)**2))
 
@@ -208,7 +225,7 @@ def compute_ecoacoustic_indices(y: np.ndarray, sr: int) -> dict:
     bio_energy = np.sum(stft[bio_mask, :]) + 1e-10
     ndsi = float((bio_energy - anthro_energy) / (bio_energy + anthro_energy))
 
-    rms = librosa.feature.rms(y=y)[0]
+    rms = librosa.feature.rms(y=y)
     snr_est = float(20 * np.log10((np.max(rms) + 1e-6) / (np.min(rms) + 1e-6)))
 
     return {
@@ -286,14 +303,14 @@ with tab_id:
         )
 
     with col_up2:
-        st.info("💡 **Field Note:** The model automatically segments audio into sliding windows and passes Perch embeddings to the MadaBird ONNX Classifier.")
+        st.info("💡 **Field Note:** The model automatically segments audio into 3s sliding windows (48 kHz) and extracts Perch embeddings for ONNX classification.")
 
     if uploaded_file is not None:
         with tempfile.NamedTemporaryFile(delete=False, suffix=Path(uploaded_file.name).suffix) as tmp:
             tmp.write(uploaded_file.getvalue())
             tmp_audio_path = Path(tmp.name)
 
-        y, sr = librosa.load(str(tmp_audio_path), sr=32000, mono=True)
+        y, sr = librosa.load(str(tmp_audio_path), sr=48000, mono=True)
         st.session_state.y_audio = y
         st.session_state.sr_audio = sr
         duration_sec = len(y) / sr
@@ -303,44 +320,60 @@ with tab_id:
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Duration", f"{duration_sec:.1f} s")
         c2.metric("Sample Rate", f"{sr:,} Hz")
-        c3.metric("Evaluated Windows", f"{max(1, int(duration_sec / 2.5)):,}")
+        c3.metric("Evaluated Windows", f"{max(1, int(duration_sec / 1.5)):,}")
         c4.metric("Regional Zone", env_type)
 
         if st.button("🚀 Analyze Soundscape & Predict Species", type="primary", use_container_width=True):
-            with st.spinner("⚡ Processing audio through Google Perch Embedder & ONNX Engine..."):
+            with st.spinner("⚡ Extracting Perch Embeddings & Executing ONNX Classifier..."):
+                # 1. Load Species Registry
+                species_lookup = load_robust_species_lookup(SPECIES_MAP_PATH)
+
+                # 2. Extract Perch Embeddings (exact Colab pipeline: 48 kHz, 3.0s window, 1.5s hop)
+                embedder = get_perch_embedder()
+                temp_emb_dir = Path(tempfile.gettempdir()) / "test_embeddings"
+                temp_emb_dir.mkdir(exist_ok=True, parents=True)
+
+                extract_embeddings(
+                    audio_paths=[tmp_audio_path],
+                    embedder=embedder,
+                    output_path=temp_emb_dir,
+                    sample_rate=48_000,
+                    window_seconds=3.0,
+                    hop_seconds=1.5
+                )
+
+                emb_file = temp_emb_dir / f"{tmp_audio_path.stem}.npy"
+                audio_embeddings = np.load(emb_file)
+                num_windows = len(audio_embeddings)
+
+                # 3. Encode Spatial Priors
+                spatial_vector = encode_spatial_priors(latitude=lat_val, longitude=lon_val, day_of_year=day_val)
+                spatial_batch = np.tile(spatial_vector, (num_windows, 1)).astype(np.float32)
+
+                # 4. ONNX Session Execution
                 session = load_onnx_session(MODEL_ONNX_PATH)
-                species_lookup = load_species_registry(SPECIES_MAP_PATH)
-
-                # 1. Extract Real Audio Embeddings
-                audio_embeds = extract_real_embeddings(y, sr)
-                num_windows = len(audio_embeds)
-
-                # 2. Encode Spatial Priors
-                spatial_vec = safe_encode_spatial_prior(lat_val, lon_val, day_val)
-                spatial_batch = np.tile(spatial_vec, (num_windows, 1)).astype(np.float32)
-
-                # 3. ONNX Session Execution
                 if session is not None:
                     input_names = [inp.name for inp in session.get_inputs()]
                     inputs = {
-                        input_names[0]: audio_embeds,
+                        input_names[0]: audio_embeddings.astype(np.float32),
                         input_names[1]: spatial_batch
                     }
                     logits = session.run(None, inputs)[0]
                     probs = 1.0 / (1.0 + np.exp(-logits))
                 else:
-                    num_classes = len(species_lookup) if species_lookup else 305
-                    probs = np.random.uniform(0.01, 0.2, size=(num_windows, num_classes))
-                    probs[:, 190] = 0.7087 # Red Fody fallback class index
+                    st.error("❌ model.onnx file not found in exports/ directory!")
+                    st.stop()
 
+                # 5. Aggregate probabilities across sliding windows
                 avg_probs = np.mean(probs, axis=0)
                 max_probs = np.max(probs, axis=0)
 
+                # 6. Construct structured detection results
                 all_records = []
                 for class_idx, avg_p in enumerate(avg_probs):
                     sp_info = species_lookup.get(class_idx, {})
                     sci_name = sp_info.get("scientific_name", f"Species_{class_idx}")
-                    com_name = sp_info.get("english_name", sp_info.get("common_name", "Malagasy Avifauna"))
+                    com_name = sp_info.get("common_name", sp_info.get("english_name", "Malagasy Avifauna"))
                     malagasy_name = sp_info.get("malagasy_name", "Vorona")
                     iucn = sp_info.get("iucn_status", "LC")
                     is_endemic = sp_info.get("endemic", True)
@@ -359,15 +392,18 @@ with tab_id:
                 df_all = pd.DataFrame(all_records).sort_values(by="mean_confidence", ascending=False).reset_index(drop=True)
                 df_filtered = df_all[df_all["mean_confidence"] >= confidence_threshold].reset_index(drop=True)
 
+                # Fallback to top 10 if threshold filters out all classes
+                df_display = df_filtered if not df_filtered.empty else df_all.head(10)
+
                 st.session_state.inference_results = {
-                    "df": df_filtered if not df_filtered.empty else df_all.head(5),
+                    "df": df_display,
                     "df_all": df_all,
                     "probs_matrix": probs,
                     "num_windows": num_windows,
                     "duration": duration_sec,
                     "species_lookup": species_lookup
                 }
-                st.success(f"✅ Prediction complete! Analysis evaluated across {num_windows} windows.")
+                st.success(f"✅ Prediction complete! Evaluated {num_windows} audio windows successfully.")
 
     if st.session_state.inference_results is not None:
         res = st.session_state.inference_results
@@ -429,7 +465,7 @@ with tab_id:
         top_names = df_res.head(8)["common_name"].tolist()
 
         timeline_data = probs_matrix[:, top_class_ids].T
-        time_stamps = [f"{i*2.5:.1f}s" for i in range(res["num_windows"])]
+        time_stamps = [f"{i*1.5:.1f}s" for i in range(res["num_windows"])]
 
         fig_heat = px.imshow(
             timeline_data,
