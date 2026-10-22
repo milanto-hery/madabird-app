@@ -13,6 +13,13 @@ import plotly.express as px
 import onnxruntime as ort
 import streamlit as st
 
+# Safe import for setuptools/pkg_resources compatibility with tensorflow_hub
+try:
+    import setuptools
+    import pkg_resources
+except ImportError:
+    pass
+
 # Ensure root directory is in Python path for module imports
 ROOT_DIR = Path(__file__).parent.resolve()
 if str(ROOT_DIR) not in sys.path:
@@ -28,7 +35,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Professional Field Ecologist Theme Styling
+# Professional Field Ecologist Styling
 st.markdown("""
 <style>
     .main {
@@ -100,7 +107,7 @@ try:
 except Exception:
     HAS_SRC_MODULE = False
 
-# Standalone fallback implementations if src module path is absent
+# Standalone fallback implementations matching Colab pipeline
 if not HAS_SRC_MODULE:
     class PerchTFHubEmbedder:
         def __init__(self, model_url: str):
@@ -159,7 +166,7 @@ if not HAS_SRC_MODULE:
 
 
 def load_robust_species_lookup(map_path: Path) -> dict:
-    """Mamaky ny species_mapping.json na inona na inona rafitra nitahirizana azy."""
+    """Robust JSON species lookup builder."""
     if not map_path.exists():
         return {}
     with open(map_path, "r", encoding="utf-8") as f:
@@ -289,6 +296,7 @@ tab_id, tab_indices, tab_map, tab_report = st.tabs([
 
 if "y_audio" not in st.session_state: st.session_state.y_audio = None
 if "sr_audio" not in st.session_state: st.session_state.sr_audio = None
+if "uploaded_filename" not in st.session_state: st.session_state.uploaded_filename = None
 if "inference_results" not in st.session_state: st.session_state.inference_results = None
 
 # --- TAB 1: AUDIO INFERENCE & SPECIES ID ---
@@ -310,19 +318,24 @@ with tab_id:
             tmp.write(uploaded_file.getvalue())
             tmp_audio_path = Path(tmp.name)
 
+        # Dynamic Audio Loading & Value Extraction
         y, sr = librosa.load(str(tmp_audio_path), sr=48000, mono=True)
         st.session_state.y_audio = y
         st.session_state.sr_audio = sr
+        st.session_state.uploaded_filename = uploaded_file.name
         duration_sec = len(y) / sr
 
+        # Audio Player placed ABOVE Visualizations / Predictions
+        st.markdown("#### 🎧 Audio Player")
         st.audio(uploaded_file.getvalue(), format="audio/mp3")
         
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Duration", f"{duration_sec:.1f} s")
         c2.metric("Sample Rate", f"{sr:,} Hz")
-        c3.metric("Evaluated Windows", f"{max(1, int(duration_sec / 1.5)):,}")
+        c3.metric("Evaluated Windows", f"{max(1, int(np.ceil(duration_sec / 1.5))):,}")
         c4.metric("Regional Zone", env_type)
 
+        st.markdown("---")
         if st.button("🚀 Analyze Soundscape & Predict Species", type="primary", use_container_width=True):
             with st.spinner("⚡ Extracting Perch Embeddings & Executing ONNX Classifier..."):
                 # 1. Load Species Registry
@@ -392,7 +405,7 @@ with tab_id:
                 df_all = pd.DataFrame(all_records).sort_values(by="mean_confidence", ascending=False).reset_index(drop=True)
                 df_filtered = df_all[df_all["mean_confidence"] >= confidence_threshold].reset_index(drop=True)
 
-                # Fallback to top 10 if threshold filters out all classes
+                # Display filtered results or top candidates strictly from model
                 df_display = df_filtered if not df_filtered.empty else df_all.head(10)
 
                 st.session_state.inference_results = {
@@ -404,6 +417,13 @@ with tab_id:
                     "species_lookup": species_lookup
                 }
                 st.success(f"✅ Prediction complete! Evaluated {num_windows} audio windows successfully.")
+    else:
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Duration", "-- s")
+        c2.metric("Sample Rate", "-- Hz")
+        c3.metric("Evaluated Windows", "--")
+        c4.metric("Regional Zone", env_type)
+        st.info("👆 Mampidira rakitra feo (.mp3, .wav) mba hamakafakana ny vokatry ny model.")
 
     if st.session_state.inference_results is not None:
         res = st.session_state.inference_results
@@ -494,6 +514,10 @@ with tab_indices:
         y_audio = st.session_state.y_audio
         sr_audio = st.session_state.sr_audio
 
+        # Audio Player placed ABOVE Spectrogram / Waveform
+        st.markdown("#### 🎧 Audio Player")
+        st.audio(st.session_state.y_audio, sample_rate=sr_audio)
+
         indices = compute_ecoacoustic_indices(y_audio, sr_audio)
 
         m1, m2, m3, m4, m5, m6 = st.columns(6)
@@ -583,7 +607,7 @@ with tab_report:
             st.download_button(
                 label="📄 Download Full Survey CSV Report",
                 data=csv_data,
-                file_name=f"madabird_pam_report.csv",
+                file_name="madabird_pam_report.csv",
                 mime="text/csv",
                 use_container_width=True
             )
